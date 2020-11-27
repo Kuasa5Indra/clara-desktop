@@ -1,0 +1,24 @@
+﻿<basic:MyPage  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro" x:Class="CLARA_Desktop.Dashboard.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CLARA_Desktop.Dashboard"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DashboardPage">
+
+    <Grid>
+        <Label x:Name="waitingLabel" Content="Waiting on Approval" HorizontalAlignment="Left" Margin="210,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="reserveLabel" Content="On Reservation" HorizontalAlignment="Left" Margin="361,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="returnLabel" Content="Returned" HorizontalAlignment="Left" Margin="503,50,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="210,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="118"/>
+        <Label x:Name="waitingCountLabel" Content="Label" HorizontalAlignment="Left" Margin="249,116,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="361,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="reserveCountLabel" Content="Label" HorizontalAlignment="Left" Margin="388,116,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="503,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="returnCountLabel" Content="Label" HorizontalAlignment="Left" Margin="535,116,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="752,10,0,0"/>
+
+    </Grid>
+</basic:MyPage>
