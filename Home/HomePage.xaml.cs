@@ -13,23 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
-using CLARA_Desktop.Login;
 
-namespace CLARA_Desktop
+namespace CLARA_Desktop.Home
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    /// 
-
-    public partial class MainWindow : MyWindow
+    public partial class HomePage : MyPage
     {
-        private LoginPage loginPage;
-        public MainWindow()
+        public HomePage()
         {
             InitializeComponent();
-            loginPage = new LoginPage();
-            mainframe.Navigate(loginPage);
         }
     }
 }

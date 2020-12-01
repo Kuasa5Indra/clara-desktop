@@ -16,6 +16,7 @@ using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
 using Velacro.UIElements.PasswordBox;
+using CLARA_Desktop.Dashboard;
 
 namespace CLARA_Desktop.Login
 {
@@ -55,6 +56,11 @@ namespace CLARA_Desktop.Login
         public void OnClickLoginButton()
         {
             getController().callMethod("Login", email_textBox.Text, password_box.Password);
+        }
+
+        public void RouteToDashboard()
+        {
+            this.NavigationService.Navigate(new DashboardPage());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿<basic:MyWindow  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro" x:Class="CLARA_Desktop.MainWindow"
+﻿<basic:MyWindow  xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+        x:Class="CLARA_Desktop.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,6 +8,7 @@
         mc:Ignorable="d"
         Title="CLARA Desktop" Height="450" Width="800">
     <Grid>
-        
+        <Frame x:Name="mainframe" Content="Frame" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 </basic:MyWindow>
