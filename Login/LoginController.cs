@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -6,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Velacro.Api;
 using Velacro.Basic;
+using CLARA_Desktop.Dashboard;
 
 namespace CLARA_Desktop.Login
 {
@@ -19,9 +21,9 @@ namespace CLARA_Desktop.Login
         public async void Login(String email, String password)
         {
             var client = new ApiClient("http://localhost:8000/");
-            var request = new ApiRequestBuilder();
+            var requestBuilder = new ApiRequestBuilder();
 
-            var req = request
+            var request = requestBuilder
                 .buildHttpRequest()
                 .addParameters("email", email)
                 .addParameters("password", password)
@@ -29,7 +31,8 @@ namespace CLARA_Desktop.Login
                 .setRequestMethod(HttpMethod.Post);
             var response = await client.sendRequest(request.getApiRequestBundle());
             Console.WriteLine(response.getJObject()["token"]);
-            client.setAuthorizationToken(response.getJObject()["token"].ToString());
+            File.WriteAllText("jwt.txt", response.getJObject()["token"].ToString());
+            getView().callMethod("RouteToDashboard");
         }
     }
 }
