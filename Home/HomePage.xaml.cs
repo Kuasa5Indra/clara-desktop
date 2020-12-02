@@ -24,6 +24,35 @@ namespace CLARA_Desktop.Home
         public HomePage()
         {
             InitializeComponent();
+            setController(new HomePageController(this));
+            GetReservation();
+        }
+
+        public void GetReservation()
+        {
+            getController().callMethod("CountWaitingReservation");
+            getController().callMethod("CountOnReserveReservation");
+            getController().callMethod("CountReturnedReservation");
+            getController().callMethod("LoadRecentReservation");
+        }
+
+        public void SetWaitingReservationLabel(int count)
+        {
+            waiting_txtCount.Content = count;
+        }
+
+        public void SetOnReserveReservationLabel(int count)
+        {
+            reserve_txtCount.Content = count;
+        }
+        public void SetReturnedReservationLabel(int count)
+        {
+            return_txtCount.Content = count;
+        }
+
+        public void SetRecentReservationListView(List<Model.Reservation> reservations)
+        {
+            recent_reservation_Lv.ItemsSource = reservations;
         }
     }
 }

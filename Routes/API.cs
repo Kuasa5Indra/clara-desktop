@@ -20,5 +20,7 @@ namespace CLARA_Desktop.Routes
 
         public static String login = "login";
         public static String logout = "logout";
+        public static String countStatusReservation = "reservations/count?status={status}";
+        public static String recentReservation = "reservations?limit=5";
     }
 }

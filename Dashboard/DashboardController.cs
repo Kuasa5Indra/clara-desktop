@@ -31,6 +31,7 @@ namespace CLARA_Desktop.Dashboard
             var response = await client.sendRequest(request.getApiRequestBundle());
             Console.WriteLine(response.getJObject()["message"]);
             client.clearAuthorizationToken();
+            File.Delete("jwt.txt");
             getView().callMethod("OnClickLogout");
         }
     }
