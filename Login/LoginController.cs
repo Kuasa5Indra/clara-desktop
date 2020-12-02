@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Velacro.Api;
 using Velacro.Basic;
 using CLARA_Desktop.Dashboard;
+using CLARA_Desktop.Routes;
 
 namespace CLARA_Desktop.Login
 {
@@ -20,14 +21,14 @@ namespace CLARA_Desktop.Login
 
         public async void Login(String email, String password)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(API.URL);
             var requestBuilder = new ApiRequestBuilder();
 
             var request = requestBuilder
                 .buildHttpRequest()
                 .addParameters("email", email)
                 .addParameters("password", password)
-                .setEndpoint("login")
+                .setEndpoint(API.login)
                 .setRequestMethod(HttpMethod.Post);
             var response = await client.sendRequest(request.getApiRequestBundle());
             Console.WriteLine(response.getJObject()["token"]);

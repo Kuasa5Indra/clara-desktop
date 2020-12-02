@@ -82,6 +82,7 @@
     <Compile Include="Reservation\ReservationPage.xaml.cs">
       <DependentUpon>ReservationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Routes\API.cs" />
     <Page Include="Asset\AssetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
