@@ -9,6 +9,7 @@ using Velacro.Api;
 using Velacro.Basic;
 using CLARA_Desktop.Dashboard;
 using CLARA_Desktop.Routes;
+using System.Windows;
 
 namespace CLARA_Desktop.Login
 {
@@ -31,9 +32,15 @@ namespace CLARA_Desktop.Login
                 .setEndpoint(API.login)
                 .setRequestMethod(HttpMethod.Post);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            Console.WriteLine(response.getJObject()["token"]);
-            File.WriteAllText("jwt.txt", response.getJObject()["token"].ToString());
-            getView().callMethod("RouteToDashboard");
+            if (response.getJObject()["role"].ToString() != "Lecturer")
+            {
+                MessageBox.Show("This application is only for Lecturer Access", "Access Denied");
+            }
+            else
+            {
+                File.WriteAllText("jwt.txt", response.getJObject()["token"].ToString());
+                getView().callMethod("RouteToDashboard");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
 using CLARA_Desktop.Login;
+using CLARA_Desktop.Dashboard;
 
 namespace CLARA_Desktop
 {
@@ -24,12 +26,22 @@ namespace CLARA_Desktop
 
     public partial class MainWindow : MyWindow
     {
-        private LoginPage loginPage;
         public MainWindow()
         {
             InitializeComponent();
-            loginPage = new LoginPage();
-            mainframe.Navigate(loginPage);
+            CheckToken();
+        }
+
+        public void CheckToken()
+        {
+            if (!File.Exists("jwt.txt"))
+            {
+                mainframe.Navigate(new LoginPage());
+            }
+            else
+            {
+                mainframe.Navigate(new DashboardPage());
+            }
         }
     }
 }
