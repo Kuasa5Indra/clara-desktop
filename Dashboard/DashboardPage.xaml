@@ -9,7 +9,7 @@
       Title="DashboardPage">
 
     <Grid>
-        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="752,10,0,0"/>
+        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="740,10,0,0"/>
         <Frame x:Name="dashboardFrame" Content="Frame" HorizontalAlignment="Left" Height="405" Margin="0,45,0,-0.4" VerticalAlignment="Top" Width="800" />
         <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,10,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top"/>
         <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="317,10,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top"/>

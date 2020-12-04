@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
+using Velacro.UIElements.Button;
 
 namespace CLARA_Desktop.Asset
 {
@@ -21,9 +22,29 @@ namespace CLARA_Desktop.Asset
     /// </summary>
     public partial class AssetPage : MyPage
     {
+        private BuilderButton builderButton;
+        private IMyButton createAssetButton;
         public AssetPage()
         {
             InitializeComponent();
+            setController(new AssetController(this));
+            InitUIBuilders();
+            InitUIElements();
+        }
+
+        private void InitUIBuilders()
+        {
+            builderButton = new BuilderButton();
+        }
+
+        private void InitUIElements()
+        {
+            createAssetButton = builderButton.activate(this, "createAssetBtn").addOnClick(this, "RouteToCreateAssetPage");
+        }
+
+        public void RouteToCreateAssetPage()
+        {
+            this.NavigationService.Navigate(new CreateAssetPage());
         }
     }
 }

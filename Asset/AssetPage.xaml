@@ -9,7 +9,6 @@
       Title="AssetPage">
 
     <Grid>
-        <Label Content="Asset" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="374,197,0,0"/>
-
+        <Button x:Name="createAssetBtn" Content="Create Asset" HorizontalAlignment="Left" Margin="52,53,0,0" VerticalAlignment="Top" Width="96"/>
     </Grid>
 </basic:MyPage>
