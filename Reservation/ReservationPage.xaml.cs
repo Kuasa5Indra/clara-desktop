@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Velacro.Basic;
 using Velacro.UIElements.Basic;
+using Velacro.UIElements.DataGrid;
+using Velacro.UIElements.ListView;
 
 namespace CLARA_Desktop.Reservation
 {
@@ -21,9 +24,37 @@ namespace CLARA_Desktop.Reservation
     /// </summary>
     public partial class ReservationPage : MyPage
     {
+
+        private BuilderDataGrid builderDataGrid;
+        private IMyDataGrid reservationDataGrid;
+
         public ReservationPage()
         {
             InitializeComponent();
+            this.KeepAlive = true;
+            initUIBuilders();
+            initUIElements();
+            setController(new ReservationController(this));
+            //getController().callMethod("getReservationsList");
+        }
+
+        private void initUIBuilders()
+        {
+            builderDataGrid = new BuilderDataGrid();
+        }
+        private void initUIElements()
+        {
+            reservationDataGrid = builderDataGrid.activate(this, "reservationsGrid");
+        }
+        public void updateGrid(MyList<Model.Reservation> listReservation)
+        {
+            MyList<string> header = new MyList<string>() { "description", "begin", "end", "user", "asset", "status" };
+            MyList<string> propertyNames = new MyList<string>() { "description", "begin", "end", "user.full_name", "asset.name", "status" };
+            this.Dispatcher.Invoke(() =>
+            {
+                reservationDataGrid.setColumnDataBinding<Model.Reservation>(header, propertyNames, listReservation);
+            });
+            
         }
     }
 }
