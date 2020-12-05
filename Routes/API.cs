@@ -13,6 +13,9 @@ namespace CLARA_Desktop.Routes
         // For Development use localhost
         public static String URL = "http://localhost:8000/";
 
+        // Here's the image path of server
+        public static String image_path = String.Concat(URL, "/assets/");
+
         /*
          * Here's the list of API routes
          * Register API routes below
@@ -25,7 +28,7 @@ namespace CLARA_Desktop.Routes
         public static String recentReservation = "reservations?limit=5";
         public static String asset = "asset";
         public static String assetId = "asset/{id}";
-        public static String assets = "assets";
+        public static String assetPage = "asset?page={number}";
 
     }
 }

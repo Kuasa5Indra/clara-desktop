@@ -9,6 +9,7 @@ using CLARA_Desktop.Routes;
 using System.Net.Http;
 using System.IO;
 using System.Windows;
+using Newtonsoft.Json;
 
 namespace CLARA_Desktop.Asset
 {
@@ -16,6 +17,48 @@ namespace CLARA_Desktop.Asset
     {
         public AssetController(IMyView _myView) : base(_myView)
         {
+        }
+
+        public async void LoadAsset()
+        {
+            var client = new ApiClient(API.URL);
+            var requestBuilder = new ApiRequestBuilder();
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+
+            var request = requestBuilder.buildHttpRequest()
+                .setEndpoint(API.asset)
+                .setRequestMethod(HttpMethod.Get);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            string json = response.getJObject()["data"].ToString();
+            int currentPage = Int32.Parse(response.getJObject()["current_page"].ToString());
+            int lastPage = Int32.Parse(response.getJObject()["last_page"].ToString());
+            List<Model.Asset> assets = JsonConvert.DeserializeObject<List<Model.Asset>>(json);
+            getView().callMethod("SetAssetListView", SetImagePath(assets), currentPage, lastPage);
+        }
+
+        public async void LoadAssetPage(int currentPage)
+        {
+            var client = new ApiClient(API.URL);
+            var requestBuilder = new ApiRequestBuilder();
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+
+            var request = requestBuilder.buildHttpRequest()
+                .setEndpoint(API.assetPage.Replace("{number}", currentPage.ToString()))
+                .setRequestMethod(HttpMethod.Get);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            string json = response.getJObject()["data"].ToString();
+            int lastPage = Int32.Parse(response.getJObject()["last_page"].ToString());
+            List<Model.Asset> assets = JsonConvert.DeserializeObject<List<Model.Asset>>(json);
+            getView().callMethod("SetAssetListView", SetImagePath(assets), currentPage, lastPage);
+        }
+
+        private List<Model.Asset> SetImagePath(List<Model.Asset> assets)
+        {
+            for(int i = 0; i < assets.Count; i++)
+            {
+                assets[i].Image = String.Concat(API.image_path, assets[i].Image);
+            }
+            return assets;
         }
 
         public async void CreateAsset(string name, String quantity, MyFile myFile)

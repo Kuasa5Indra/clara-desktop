@@ -24,12 +24,17 @@ namespace CLARA_Desktop.Asset
     {
         private BuilderButton builderButton;
         private IMyButton createAssetButton;
+        private IMyButton previousPageButton;
+        private IMyButton nextPageButton;
+        private int currentPage;
+
         public AssetPage()
         {
             InitializeComponent();
             setController(new AssetController(this));
             InitUIBuilders();
             InitUIElements();
+            GetAssets();
         }
 
         private void InitUIBuilders()
@@ -40,6 +45,47 @@ namespace CLARA_Desktop.Asset
         private void InitUIElements()
         {
             createAssetButton = builderButton.activate(this, "createAssetBtn").addOnClick(this, "RouteToCreateAssetPage");
+            previousPageButton = builderButton.activate(this, "previous_page_button").addOnClick(this, "MoveToPreviousPage");
+            nextPageButton = builderButton.activate(this, "next_page_button").addOnClick(this, "MoveToNextPage");
+        }
+
+        public void GetAssets()
+        {
+            getController().callMethod("LoadAsset");
+        }
+
+        public void SetAssetListView(List<Model.Asset> assets, int currentPage, int lastPage)
+        {
+            asset_listview.ItemsSource = assets;
+            if (currentPage == 1)
+            {
+                previous_page_button.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                previous_page_button.Visibility = Visibility.Visible;
+            }
+
+            if (currentPage == lastPage)
+            {
+                next_page_button.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                next_page_button.Visibility = Visibility.Visible;
+            }
+        }
+
+        public void MoveToPreviousPage()
+        {
+            currentPage -= 1;
+            getController().callMethod("LoadAssetPage", currentPage);
+        }
+
+        public void MoveToNextPage()
+        {
+            currentPage += 1;
+            getController().callMethod("LoadAssetPage", currentPage);
         }
 
         public void RouteToCreateAssetPage()
