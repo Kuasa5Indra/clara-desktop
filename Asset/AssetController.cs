@@ -79,5 +79,19 @@ namespace CLARA_Desktop.Asset
             var response = await client.sendRequest(request.getApiRequestBundle());
             MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
         }
+
+        public async void SearchAsset(string name)
+        {
+            var client = new ApiClient(API.URL);
+            var requestBuilder = new ApiRequestBuilder();
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+
+            var request = requestBuilder.buildHttpRequest()
+                .setEndpoint(API.assetName.Replace("{name}", name))
+                .setRequestMethod(HttpMethod.Get);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            List<Model.Asset> assets = response.getParsedObject<List<Model.Asset>>();
+            getView().callMethod("SetSearchAsset", SetImagePath(assets));
+        }
     }
 }

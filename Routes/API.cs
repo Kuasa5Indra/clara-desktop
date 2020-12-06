@@ -28,6 +28,7 @@ namespace CLARA_Desktop.Routes
         public static String recentReservation = "reservations?limit=5";
         public static String asset = "asset";
         public static String assetId = "asset/{id}";
+        public static String assetName = "asset/search?name={name}";
         public static String assetPage = "asset?page={number}";
 
     }

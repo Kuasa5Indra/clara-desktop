@@ -10,7 +10,7 @@
 
     <Grid>
         <Button x:Name="createAssetBtn" Content="Create Asset" HorizontalAlignment="Left" Margin="52,53,0,0" VerticalAlignment="Top" Width="96"/>
-        <ListView x:Name="asset_listview" HorizontalAlignment="Left" Height="253" Margin="52,92,0,0" VerticalAlignment="Top" Width="697">
+        <ListView x:Name="asset_listview" HorizontalAlignment="Left" Height="253" Margin="52,92,0,0" VerticalAlignment="Top" Width="697" MouseDoubleClick="asset_listview_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="174" Width="141" Orientation="Vertical">
@@ -23,5 +23,7 @@
         </ListView>
         <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="674,363,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="581,363,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="search_txtBox" HorizontalAlignment="Left" Height="23" Margin="503,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
+        <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="674,58,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </basic:MyPage>
