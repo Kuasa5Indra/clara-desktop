@@ -79,8 +79,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Asset\AssetController.cs" />
+    <Compile Include="Asset\AssetDetailPage.xaml.cs">
+      <DependentUpon>AssetDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Asset\AssetPage.xaml.cs">
       <DependentUpon>AssetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asset\CreateAssetPage.xaml.cs">
+      <DependentUpon>CreateAssetPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\DashboardController.cs" />
     <Compile Include="Dashboard\DashboardPage.xaml.cs">
@@ -109,9 +116,17 @@
       <DependentUpon>ReservationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Routes\API.cs" />
+    <Page Include="Asset\AssetDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Asset\AssetPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Asset\CreateAssetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dashboard\DashboardPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +187,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Asset\no-image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
