@@ -80,6 +80,39 @@ namespace CLARA_Desktop.Asset
             MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
         }
 
+        public async void UpdateAsset(Model.Asset newAsset, MyFile myFile)
+        {
+            var client = new ApiClient(API.URL);
+            var requestBuilder = new ApiRequestBuilder();
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+
+            var formContent = new MultipartFormDataContent();
+            formContent.Add(new StringContent(newAsset.Name), "name");
+            formContent.Add(new StringContent(newAsset.Quantity.ToString()), "quantity");
+            if (myFile != null)
+                formContent.Add(new StreamContent(new MemoryStream(myFile.byteArray)), "image", myFile.fullFileName);
+            var request = requestBuilder
+                .buildMultipartRequest(new MultiPartContent(formContent))
+                .setEndpoint(API.assetId.Replace("{id}", newAsset.Id))
+                .setRequestMethod(HttpMethod.Post);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
+        }
+
+        public async void DeleteAsset(string id)
+        {
+            var client = new ApiClient(API.URL);
+            var requestBuilder = new ApiRequestBuilder();
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+
+            var request = requestBuilder.buildHttpRequest()
+                .setEndpoint(API.assetId.Replace("{id}", id))
+                .setRequestMethod(HttpMethod.Delete);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
+            getView().callMethod("RouteToAssetPage");
+        }
+
         public async void SearchAsset(string name)
         {
             var client = new ApiClient(API.URL);

@@ -126,7 +126,7 @@ namespace CLARA_Desktop.Asset
         {
             ListView Item = (ListView)sender;
             Model.Asset asset = (Model.Asset)Item.SelectedItem;
-            Console.WriteLine(asset.Name);
+            this.NavigationService.Navigate(new AssetDetailPage(asset));
         }
     }
 }

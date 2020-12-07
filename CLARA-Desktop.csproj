@@ -80,6 +80,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Asset\AssetController.cs" />
+    <Compile Include="Asset\AssetDetailPage.xaml.cs">
+      <DependentUpon>AssetDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Asset\AssetPage.xaml.cs">
       <DependentUpon>AssetPage.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <DependentUpon>ReservationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Routes\API.cs" />
+    <Page Include="Asset\AssetDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Asset\AssetPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
