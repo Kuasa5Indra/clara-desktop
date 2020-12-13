@@ -14,11 +14,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.Basic;
+using Velacro.UIElements.Button;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.DataGrid;
 using Velacro.UIElements.TextBlock;
 using CLARA_Desktop.Routes;
-using System.Net;
 
 namespace CLARA_Desktop.Reservation
 {
@@ -38,6 +38,9 @@ namespace CLARA_Desktop.Reservation
         private BuilderDataGrid builderDataGrid;
         private IMyDataGrid statusDataGrid;
         private Image assetImage;
+        private BuilderButton builderButton;
+        private IMyButton acceptButton;
+        private IMyButton denyButton;
 
         public ReservationDetailPage(Model.Reservation reservation)
         {
@@ -54,6 +57,7 @@ namespace CLARA_Desktop.Reservation
         {
             builderDataGrid = new BuilderDataGrid();
             builderTextBlock = new BuilderTextBlock();
+            builderButton = new BuilderButton();
         }
         private void InitUIElements()
         {
@@ -65,7 +69,8 @@ namespace CLARA_Desktop.Reservation
             nrpTextBlock = builderTextBlock.activate(this, "nrp");
             assetNameTextBlock = builderTextBlock.activate(this, "assetName");
             assetImage = (Image) this.FindName("imageAsset");
-
+            acceptButton = builderButton.activate(this, "accept_button").addOnClick(this, "OnClickAcceptButton");
+            denyButton = builderButton.activate(this, "deny_button").addOnClick(this, "OnClickDenyButton");
         }
 
         public void UpdateStatusGrid()
@@ -82,7 +87,40 @@ namespace CLARA_Desktop.Reservation
                 assetNameTextBlock.setText(reservation.Asset.Name);
                 statusDataGrid.setColumnDataBinding<Model.History>(header, propertyNames, (reservation.Histories));
                 assetImage.Source = new BitmapImage(new Uri(String.Concat(API.image_path, reservation.Asset.Image)));
+                if (reservation.Status == "On Reservation")
+                {
+                    deny_button.Visibility = Visibility.Hidden;
+                    acceptButton.setText("Finish");
+                }
+                else if (reservation.Status == "Returned" || reservation.Status == "Denied")
+                {
+                    accept_button.Visibility = Visibility.Hidden;
+                    deny_button.Visibility = Visibility.Hidden;
+                }
             });
+        }
+
+        public void OnClickAcceptButton()
+        {
+            if (accept_button.Content.Equals("Accept"))
+            {
+                getController().callMethod("UpdateStatusReservation", reservation.Id, "On Reservation");
+            }
+            else
+            {
+                getController().callMethod("UpdateStatusReservation", reservation.Id, "Returned");
+            }
+        }
+
+        public void OnClickDenyButton()
+        {
+            getController().callMethod("UpdateStatusReservation", reservation.Id, "Denied");
+        }
+
+        public void GetUpdatedReservation(Model.Reservation reservation)
+        {
+            this.reservation = reservation;
+            UpdateStatusGrid();
         }
 
     }

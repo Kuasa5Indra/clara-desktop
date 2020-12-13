@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.IO;
 using CLARA_Desktop.Routes;
 using Newtonsoft.Json;
+using System.Windows;
 
 namespace CLARA_Desktop.Reservation
 {
@@ -62,6 +63,39 @@ namespace CLARA_Desktop.Reservation
         public void SetContentView(int currentPage, int lastPage)
         {
             getView().callMethod("UpdateGrid", reservationList, currentPage, lastPage);
+        }
+
+        public async void UpdateStatusReservation(string id, string status)
+        {
+            string description;
+            if (status.Equals("On Reservation"))
+            {
+                description = "You can reserve this";
+            }
+            else if (status.Equals("Returned"))
+            {
+                description = "Asset has been returned";
+            }
+            else
+            {
+                description = "Sorry, reservation denied";
+            }
+            Console.WriteLine(id);
+            var client = new ApiClient(API.URL);
+            var requestBuilder = new ApiRequestBuilder();
+            var request = requestBuilder
+                .buildHttpRequest()
+                .addParameters("status", status)
+                .addParameters("description", description)
+                .setEndpoint(API.reservationId.Replace("{Id}", id))
+                .setRequestMethod(HttpMethod.Put);
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+            Console.WriteLine(request.getApiRequestBundle().getHeaders().convertToJSON());
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            string json = response.getJObject()["reservation"].ToString();
+            Model.Reservation updatedReservation = JsonConvert.DeserializeObject<Model.Reservation>(json);
+            MessageBox.Show(response.getJObject()["message"].ToString());
+            getView().callMethod("GetUpdatedReservation", updatedReservation);
         }
     }
 }
