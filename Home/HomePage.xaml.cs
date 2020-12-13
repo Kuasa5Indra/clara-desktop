@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
+using CLARA_Desktop.Reservation;
 
 namespace CLARA_Desktop.Home
 {
@@ -53,6 +54,13 @@ namespace CLARA_Desktop.Home
         public void SetRecentReservationListView(List<Model.Reservation> reservations)
         {
             recent_reservation_Lv.ItemsSource = reservations;
+        }
+        
+        private void recent_reservation_Lv_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ListView Item = (ListView)sender;
+            Model.Reservation reservation = (Model.Reservation)Item.SelectedItem;
+            this.NavigationService.Navigate(new ReservationDetailPage(reservation));
         }
     }
 }

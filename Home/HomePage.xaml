@@ -18,7 +18,7 @@
         <Label x:Name="waiting_txtCount" Content="0" HorizontalAlignment="Left" Margin="139,74,0,0" VerticalAlignment="Top"/>
         <Label x:Name="reserve_txtCount" Content="0" HorizontalAlignment="Left" Margin="374,74,0,0" VerticalAlignment="Top"/>
         <Label x:Name="return_txtCount" Content="0" HorizontalAlignment="Left" Margin="615,74,0,0" VerticalAlignment="Top"/>
-        <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="226" Margin="90,201,0,0" VerticalAlignment="Top" Width="590">
+        <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="226" Margin="90,201,0,0" VerticalAlignment="Top" Width="590" MouseDoubleClick="recent_reservation_Lv_MouseDoubleClick">
             <ListView.View>
                 <GridView x:Name="recent_reservation_Gv">
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date_begin}"/>

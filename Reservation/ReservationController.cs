@@ -7,53 +7,61 @@ using System.Threading.Tasks;
 using Velacro.Api;
 using Velacro.Basic;
 using System.Diagnostics;
+using System.IO;
+using CLARA_Desktop.Routes;
+using Newtonsoft.Json;
 
 namespace CLARA_Desktop.Reservation
 {
     class ReservationController : MyController
     {
+        public MyList<Model.Reservation> reservationList;
         public ReservationController(IMyView _myView) : base(_myView)
         {
-            getReservationsList();
+
         }
 
-        public async void getReservationsList()
+        public async void GetReservationsList()
         {
-            var client = new ApiClient("https://clara-app.tech/api/reservations?limit=5");
+            var client = new ApiClient(API.URL);
             var request = new ApiRequestBuilder();
-            string token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvY2xhcmEtYXBwLnRlY2hcL2FwaVwvbG9naW4iLCJpYXQiOjE2MDY5MTUyNTMsIm5iZiI6MTYwNjkxNTI1MywianRpIjoiS25FbUxTWUZ1ODlyWWFDUCIsInN1YiI6IjVmYzVmMGRiMmI3MjAwMDBkYzAwMGExOCIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.oTzriFjIVB1nzSmznWY3mah5K32od1hOBHYNH72VwXw";
             var req = request
                 .buildHttpRequest()
-                //.addHeaders("token", token)
-                //.setEndpoint("api/reservations?limit=5")
+                .setEndpoint(API.reservation)
                 .setRequestMethod(HttpMethod.Get);
-            client.setAuthorizationToken(token);
-            client.setOnSuccessRequest(callbackSuccess);
-            //client.setOnFailedRequest(setReservationListContent);
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+            client.setOnSuccessRequest(CallbackSuccess);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            Debug.WriteLine("asdf");
-
-
         }
-        
-        public MyList<Model.Reservation> reservationList;
 
-        public void callbackSuccess(HttpResponseBundle _response)
+        public async void LoadReservationPage(int currentPage)
         {
-            Debug.WriteLine("masuk callback api");
+            var client = new ApiClient(API.URL);
+            var request = new ApiRequestBuilder();
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint(API.reservationPage.Replace("{number}", currentPage.ToString()))
+                .setRequestMethod(HttpMethod.Get);
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+            client.setOnSuccessRequest(CallbackSuccess);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+        public void CallbackSuccess(HttpResponseBundle _response)
+        {
             if (_response.getHttpResponseMessage().Content != null)
             {
-                //Console.WriteLine(_response.getHttpResponseMessage());
-                //Debug.WriteLine(_response.getHttpResponseMessage());
-                Debug.WriteLine(_response.getParsedObject<MyList<Model.Reservation>>());
-                reservationList = _response.getParsedObject<MyList<Model.Reservation>>();
-                setContentView();
+                string json = _response.getJObject()["data"].ToString();
+                int currentPage = Int32.Parse(_response.getJObject()["current_page"].ToString());
+                int lastPage = Int32.Parse(_response.getJObject()["last_page"].ToString());
+                reservationList = JsonConvert.DeserializeObject<MyList<Model.Reservation>>(json);
+                SetContentView(currentPage, lastPage);
             }
         }
 
-        public void setContentView()
+        public void SetContentView(int currentPage, int lastPage)
         {
-            getView().callMethod("updateGrid", reservationList);
+            getView().callMethod("UpdateGrid", reservationList, currentPage, lastPage);
         }
     }
 }

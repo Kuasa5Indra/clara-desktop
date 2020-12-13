@@ -105,13 +105,10 @@
     <Compile Include="Model\History.cs" />
     <Compile Include="Model\Reservation.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="ReservationDetail\Model.cs" />
-    <Compile Include="ReservationDetail\ReservationDetailController.cs" />
-    <Compile Include="ReservationDetail\ReservationDetailPage.xaml.cs">
+    <Compile Include="Reservation\ReservationController.cs" />
+    <Compile Include="Reservation\ReservationDetailPage.xaml.cs">
       <DependentUpon>ReservationDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Reservation\Model.cs" />
-    <Compile Include="Reservation\ReservationController.cs" />
     <Compile Include="Reservation\ReservationPage.xaml.cs">
       <DependentUpon>ReservationPage.xaml</DependentUpon>
     </Compile>
@@ -152,7 +149,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ReservationDetail\ReservationDetailPage.xaml">
+    <Page Include="Reservation\ReservationDetailPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -189,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Asset\no-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reservation\no-image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

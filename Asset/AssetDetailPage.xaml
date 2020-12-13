@@ -11,7 +11,7 @@
     <Grid>
         <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="23" Margin="505,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
         <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,97,0,0"/>
-        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="186" Margin="136,100,0,0" VerticalAlignment="Top" Width="205" Stretch="Fill"/>
+        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="186" Margin="136,100,0,0" VerticalAlignment="Top" Width="205" Stretch="Fill" Source="no-image.png"/>
         <Button x:Name="update_button" Content="Update" HorizontalAlignment="Left" Margin="669,251,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="delete_button" Content="Delete" HorizontalAlignment="Left" Margin="566,251,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Quantity" HorizontalAlignment="Left" Margin="444,154,0,0" VerticalAlignment="Top"/>

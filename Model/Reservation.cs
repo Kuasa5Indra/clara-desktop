@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Velacro.Basic;
 
 namespace CLARA_Desktop.Model
 {
@@ -24,6 +25,6 @@ namespace CLARA_Desktop.Model
         [JsonProperty("asset")]
         public Asset Asset { get; set; }
         [JsonProperty("history")]
-        public List<History> Histories { get; set; }
+        public MyList<History> Histories { get; set; }
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.Basic;
 using Velacro.UIElements.Basic;
+using Velacro.UIElements.Button;
 using Velacro.UIElements.DataGrid;
 using Velacro.UIElements.ListView;
 
@@ -26,35 +27,84 @@ namespace CLARA_Desktop.Reservation
     {
 
         private BuilderDataGrid builderDataGrid;
+        private BuilderButton builderButton;
         private IMyDataGrid reservationDataGrid;
+        private IMyButton previousButton;
+        private IMyButton nextButton;
+        private int currentPage = 1;
 
         public ReservationPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
-            initUIBuilders();
-            initUIElements();
+            InitUIBuilders();
+            InitUIElements();
             setController(new ReservationController(this));
-            //getController().callMethod("getReservationsList");
+            GetReservation();
         }
 
-        private void initUIBuilders()
+        private void InitUIBuilders()
         {
             builderDataGrid = new BuilderDataGrid();
+            builderButton = new BuilderButton();
         }
-        private void initUIElements()
+        private void InitUIElements()
         {
             reservationDataGrid = builderDataGrid.activate(this, "reservationsGrid");
+            previousButton = builderButton.activate(this, "previous_page_button").addOnClick(this, "MoveToPreviousPage");
+            nextButton = builderButton.activate(this, "next_page_button").addOnClick(this, "MoveToNextPage");
         }
-        public void updateGrid(MyList<Model.Reservation> listReservation)
+
+        public void GetReservation()
+        {
+            getController().callMethod("GetReservationsList");
+        }
+        public void UpdateGrid(MyList<Model.Reservation> listReservation, int currentPage, int lastPage)
         {
             MyList<string> header = new MyList<string>() { "description", "begin", "end", "user", "asset", "status" };
-            MyList<string> propertyNames = new MyList<string>() { "description", "begin", "end", "user.full_name", "asset.name", "status" };
+            MyList<string> propertyNames = new MyList<string>() { "Description", "Date_begin", "Date_end", "User.Full_name", "Asset.Name", "Status" };
             this.Dispatcher.Invoke(() =>
             {
                 reservationDataGrid.setColumnDataBinding<Model.Reservation>(header, propertyNames, listReservation);
+                if (currentPage == 1)
+                {
+                    previous_page_button.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    previous_page_button.Visibility = Visibility.Visible;
+                }
+
+                if (currentPage == lastPage)
+                {
+                    next_page_button.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    next_page_button.Visibility = Visibility.Visible;
+                }
             });
-            
+        }
+
+        public void MoveToPreviousPage()
+        {
+            currentPage -= 1;
+            reservationsGrid.UnselectAll();
+            getController().callMethod("LoadReservationPage", currentPage);
+        }
+
+        public void MoveToNextPage()
+        {
+            currentPage += 1;
+            reservationsGrid.UnselectAll();
+            getController().callMethod("LoadReservationPage", currentPage);
+        }
+
+        private void reservationsGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGrid Item = (DataGrid)sender;
+            Model.Reservation reservation = (Model.Reservation)Item.SelectedItem;
+            this.NavigationService.Navigate(new ReservationDetailPage(reservation));
         }
     }
 }

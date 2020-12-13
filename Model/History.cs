@@ -13,5 +13,7 @@ namespace CLARA_Desktop.Model
         public string Status { get; set; }
         [JsonProperty("datetime")]
         public string Datetime { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
     }
 }
