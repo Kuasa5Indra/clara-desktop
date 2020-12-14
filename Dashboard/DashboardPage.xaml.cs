@@ -73,5 +73,10 @@ namespace CLARA_Desktop.Dashboard
         {
             dashboardFrame.Navigate(new ReservationPage());
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
