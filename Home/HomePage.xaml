@@ -9,18 +9,25 @@
       Title="HomePage">
 
     <Grid>
-        <Label Content="Waiting on Approval" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="On Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="321,10,0,0"/>
-        <Label Content="Returned" HorizontalAlignment="Left" Margin="562,10,0,0" VerticalAlignment="Top"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="90,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="118"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="321,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="118"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="562,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="118"/>
-        <Label x:Name="waiting_txtCount" Content="0" HorizontalAlignment="Left" Margin="139,74,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="reserve_txtCount" Content="0" HorizontalAlignment="Left" Margin="374,74,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="return_txtCount" Content="0" HorizontalAlignment="Left" Margin="615,74,0,0" VerticalAlignment="Top"/>
-        <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="226" Margin="90,201,0,0" VerticalAlignment="Top" Width="590" MouseDoubleClick="recent_reservation_Lv_MouseDoubleClick">
+        <Grid.Background>
+            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+        </Grid.Background>
+        <TextBlock x:Name="heading1" HorizontalAlignment="Left" Margin="44,10,0,0" TextWrapping="Wrap" Text="Hello, Ilyas!" VerticalAlignment="Top" Foreground="#FF000050" FontWeight="Bold" FontSize="32"/>
+        <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="44,53,0,0" TextWrapping="Wrap" Text="Here are the reservation data recap for this month." VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="14"/>
+        <Label Content="Waiting on Approval" HorizontalAlignment="Left" Margin="44,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="On Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304,79,0,0"/>
+        <Label Content="Returned" HorizontalAlignment="Left" Margin="561,79,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="54,103,0,0" Stroke="Black" VerticalAlignment="Top" Width="90"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="304,103,0,0" Stroke="Black" VerticalAlignment="Top" Width="90"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Margin="544,103,0,0" Stroke="Black" VerticalAlignment="Top" Width="90"/>
+        <Label x:Name="waiting_txtCount" Content="0" HorizontalAlignment="Left" Margin="91,131,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="reserve_txtCount" Content="0" HorizontalAlignment="Left" Margin="342,131,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="return_txtCount" Content="0" HorizontalAlignment="Left" Margin="584,131,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="reservation_txtBlock_Copy1" HorizontalAlignment="Left" Margin="44,207,0,0" TextWrapping="Wrap" Text="Recent reservations" VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="14"/>
+        <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="150" Margin="44,226,0,0" VerticalAlignment="Top" Width="590" MouseDoubleClick="recent_reservation_Lv_MouseDoubleClick">
             <ListView.View>
                 <GridView x:Name="recent_reservation_Gv">
+                    <GridViewColumn Header="No" DisplayMemberBinding="{Binding No}"/>
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date_begin}"/>
                     <GridViewColumn Header="Reservee" DisplayMemberBinding="{Binding User.Full_name}"/>
                     <GridViewColumn Header="Item Reserved" DisplayMemberBinding="{Binding Asset.Name}"/>
@@ -28,6 +35,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
+        <Image x:Name="footer" Margin="44,399,670,10" RenderTransformOrigin="0.826,0.549" Source="clara_logo_2.png"/>
+        <TextBlock x:Name="footer1" HorizontalAlignment="Left" Margin="190,399,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer2" HorizontalAlignment="Left" Margin="190,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Run Text="Clara is a platform to connect college"/><LineBreak/><Run Text="students and college administrative staff "/><LineBreak/><Run Text="on reservation request"/></TextBlock>
+        <TextBlock x:Name="footer3" HorizontalAlignment="Left" Margin="383,399,0,0" TextWrapping="Wrap" Text="Contact Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer4" HorizontalAlignment="Left" Margin="383,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Span Foreground="White" FontFamily="Open Sans"><Run Text="You can just contact Ilyas, Fajar, Indra, Tiara, Gebby or Ubai if this platform has bugs that annoy you so much that you have to contact them."/></Span></TextBlock>
     </Grid>
 </basic:MyPage>
