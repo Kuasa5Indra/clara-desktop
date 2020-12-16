@@ -17,11 +17,11 @@
         <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="317,10,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050"/>
         <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="392,10,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050"/>
         <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="740,10,0,0" Foreground="#FF000050"/>
-        <Image x:Name="clara_logo" Margin="37,5,677,422" Source="clara_logo_1.png"/>
         <Image x:Name="line" Margin="144,5,626,422">
             <Image.Source>
                 <ImageSource>line.png</ImageSource>
             </Image.Source>
         </Image>
+        <Image x:Name="clara_logo" Margin="37,5,677,422" Source="clara_logo_1.png"/>
     </Grid>
 </basic:MyPage>
