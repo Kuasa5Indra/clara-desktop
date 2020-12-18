@@ -31,6 +31,7 @@ namespace CLARA_Desktop.Home
 
         public void GetReservation()
         {
+            getController().callMethod("ShowProfile");
             getController().callMethod("CountWaitingReservation");
             getController().callMethod("CountOnReserveReservation");
             getController().callMethod("CountReturnedReservation");
@@ -54,6 +55,11 @@ namespace CLARA_Desktop.Home
         public void SetRecentReservationListView(List<Model.Reservation> reservations)
         {
             recent_reservation_Lv.ItemsSource = reservations;
+        }
+
+        public void SetProfile(Model.User user)
+        {
+            heading1.Text = String.Concat("Hello, ", user.Full_name);
         }
         
         private void recent_reservation_Lv_MouseDoubleClick(object sender, MouseButtonEventArgs e)

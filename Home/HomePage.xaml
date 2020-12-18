@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        <TextBlock x:Name="heading1" HorizontalAlignment="Left" Margin="44,10,0,0" TextWrapping="Wrap" Text="Hello, Ilyas!" VerticalAlignment="Top" Foreground="#FF000050" FontWeight="Bold" FontSize="32"/>
+        <TextBlock x:Name="heading1" HorizontalAlignment="Left" Margin="44,10,0,0" TextWrapping="Wrap" Text="Hello," VerticalAlignment="Top" Foreground="#FF000050" FontWeight="Bold" FontSize="32"/>
         <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="44,53,0,0" TextWrapping="Wrap" Text="Here are the reservation data recap for this month." VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="14"/>
         <Label Content="Waiting on Approval" HorizontalAlignment="Left" Margin="44,79,0,0" VerticalAlignment="Top"/>
         <Label Content="On Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304,79,0,0"/>
@@ -27,7 +27,6 @@
         <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="150" Margin="44,226,0,0" VerticalAlignment="Top" Width="590" MouseDoubleClick="recent_reservation_Lv_MouseDoubleClick">
             <ListView.View>
                 <GridView x:Name="recent_reservation_Gv">
-                    <GridViewColumn Header="No" DisplayMemberBinding="{Binding No}"/>
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date_begin}"/>
                     <GridViewColumn Header="Reservee" DisplayMemberBinding="{Binding User.Full_name}"/>
                     <GridViewColumn Header="Item Reserved" DisplayMemberBinding="{Binding Asset.Name}"/>

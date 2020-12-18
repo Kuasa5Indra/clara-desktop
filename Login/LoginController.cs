@@ -31,15 +31,29 @@ namespace CLARA_Desktop.Login
                 .addParameters("password", password)
                 .setEndpoint(API.login)
                 .setRequestMethod(HttpMethod.Post);
+            client.setOnFailedRequest(FailedLogin);
+            client.setOnSuccessRequest(SuccessLogin);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            if (response.getJObject()["role"].ToString() != "Lecturer")
+        }
+
+        public void FailedLogin(HttpResponseBundle _response)
+        {
+            MessageBox.Show("Invalid email or password", "Access Denied");
+        }
+
+        public void SuccessLogin(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
             {
-                MessageBox.Show("This application is only for Lecturer Access", "Access Denied");
-            }
-            else
-            {
-                File.WriteAllText("jwt.txt", response.getJObject()["token"].ToString());
-                getView().callMethod("RouteToDashboard");
+                if (_response.getJObject()["role"].ToString() != "Lecturer")
+                {
+                    MessageBox.Show("This application is only for Lecturer Access", "Access Denied");
+                }
+                else
+                {
+                    File.WriteAllText("jwt.txt", _response.getJObject()["token"].ToString());
+                    getView().callMethod("RouteToDashboard");
+                }
             }
         }
     }
