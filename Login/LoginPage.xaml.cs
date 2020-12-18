@@ -61,7 +61,10 @@ namespace CLARA_Desktop.Login
 
         public void RouteToDashboard()
         {
-            this.NavigationService.Navigate(new DashboardPage());
+            this.Dispatcher.Invoke(() =>
+            {
+                this.NavigationService.Navigate(new DashboardPage());
+            });
         }
     }
 }
