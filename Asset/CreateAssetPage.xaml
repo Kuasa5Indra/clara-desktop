@@ -6,16 +6,32 @@
       xmlns:local="clr-namespace:CLARA_Desktop.Asset"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CreateAssetPage">
+      Title="CreateAssetPage"
+      FontFamily="{StaticResource OpenSans}">
 
     <Grid>
-        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="23" Margin="505,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
-        <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,97,0,0"/>
-        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="186" Margin="136,100,0,0" VerticalAlignment="Top" Width="205" Source="no-image.png" Stretch="Fill"/>
-        <Button x:Name="create_button" Content="Create" HorizontalAlignment="Left" Margin="669,251,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="566,251,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Quantity" HorizontalAlignment="Left" Margin="444,154,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="23" Margin="669,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="203,310,0,0" VerticalAlignment="Top" Width="75"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+        </Grid.Background>
+        <Image x:Name="clara_logo" Margin="37,5,677,422" Source="clara_logo_1.png"/>
+        <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,10,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" Foreground="#FF000050"/>
+        <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="317,10,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050"/>
+        <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="392,10,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050"/>
+        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="740,10,0,0" Foreground="#FF000050"/>
+        <Image x:Name="line" Margin="144,5,626,422" Source="line.png"/>
+        <TextBlock x:Name="create_asset_label" Text="Add Asset" Margin="140,68,557,349" FontSize="20" Foreground="#FF000050" />
+        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="23" Margin="466,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
+        <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="352,125,0,0" FontWeight="Bold" FontSize="16" Foreground="#707070"/>
+        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="172" Margin="140,106,0,0" VerticalAlignment="Top" Width="182" Source="no-image.png" Stretch="Fill"/>
+        <Button x:Name="create_button" Content="Create" HorizontalAlignment="Left" Margin="569,246,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
+        <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="466,246,0,0" VerticalAlignment="Top" Width="84" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070"/>
+        <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="352,182,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#707070"/>
+        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="23" Margin="577,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
+        <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="190,301,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
+        <Image x:Name="footer" Margin="44,399,670,10" RenderTransformOrigin="0.826,0.549" Source="clara_logo_2.png"/>
+        <TextBlock x:Name="footer1" HorizontalAlignment="Left" Margin="190,399,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer2" HorizontalAlignment="Left" Margin="190,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Run Text="Clara is a platform to connect college"/><LineBreak/><Run Text="students and college administrative staff "/><LineBreak/><Run Text="on reservation request"/></TextBlock>
+        <TextBlock x:Name="footer3" HorizontalAlignment="Left" Margin="383,399,0,0" TextWrapping="Wrap" Text="Contact Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer4" HorizontalAlignment="Left" Margin="383,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Span Foreground="White"><Run Text="You can just contact Ilyas, Fajar, Indra, Tiara, Gebby or Ubai if this platform has bugs that annoy you so much that you have to contact them."/></Span></TextBlock>
     </Grid>
 </basic:MyPage>
