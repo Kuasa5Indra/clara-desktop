@@ -11,19 +11,25 @@
       Title="ReservationDetailPage">
 
     <Grid>
-        <TextBlock Name="begin"  Text="begin" HorizontalAlignment="Left" Margin="257,116,0,0" VerticalAlignment="Top" Height="52" Width="94"/>
-        <TextBlock Name="end" Text="end" HorizontalAlignment="Left" Margin="257,183,0,0" VerticalAlignment="Top"/>
-        <TextBlock Name="reservee" Text="reservee" HorizontalAlignment="Left" Height="36" Margin="423,86,0,0" VerticalAlignment="Top" Width="349"/>
-        <TextBlock Name="classroom" Text="class" HorizontalAlignment="Left" Height="18" Margin="423,127,0,0" VerticalAlignment="Top" Width="33"/>
-        <TextBlock x:Name="nrp" HorizontalAlignment="Left" Margin="423,180,0,0" VerticalAlignment="Top"><Run Text="nrp"/></TextBlock>
-        <TextBlock Name="assetName" Text="asset name" HorizontalAlignment="Left" Margin="257,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="110"/>
-        <DataGrid Name="statusGrid" Margin="109,270,157,57" IsReadOnly="True" />
-        <Image Name="imageAsset" HorizontalAlignment="Left" Height="186" Margin="10,10,0,0" VerticalAlignment="Top" Width="205" Source="no-image.png" Stretch="Fill"/>
-        <Button x:Name="accept_button" Content="Accept" HorizontalAlignment="Left" Margin="568,246,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="deny_button" Content="Deny" HorizontalAlignment="Left" Margin="469,246,0,0" VerticalAlignment="Top" Width="75"/>
-
-
-
-
+        <Grid.Background>
+            <ImageBrush ImageSource="Background Reservation.png"/>
+        </Grid.Background>
+        <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="24,32,0,0" TextWrapping="Wrap" Text="Reservation Detail" VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="14"/>
+        <Image Name="imageAsset" HorizontalAlignment="Left" Height="186" Margin="24,73,0,0" VerticalAlignment="Top" Width="205" Source="no-image.png" Stretch="Fill"/>
+        <TextBlock Name="assetName" Text="Asset name" HorizontalAlignment="Left" Margin="257,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="110" FontWeight="Bold"/>
+        <TextBlock Name="reservee" Text="Reservee" HorizontalAlignment="Left" Height="24" Margin="257,86,0,0" VerticalAlignment="Top" Width="349" Foreground="#FF707070"/>
+        <TextBlock Name="classroom" Text="Class" HorizontalAlignment="Left" Height="18" Margin="257,110,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="-3.364,-0.333" Foreground="#FF707070"/>
+        <TextBlock x:Name="nrp" HorizontalAlignment="Left" Margin="257,133,0,0" VerticalAlignment="Top" Text="NRP" Foreground="#FF707070"/>
+        <TextBlock Name="begin"  Text="Begin Date" HorizontalAlignment="Left" Margin="257,169,0,0" VerticalAlignment="Top" Height="19" Width="94" Foreground="#FF707070"/>
+        <TextBlock Name="end" Text="Return Date" HorizontalAlignment="Left" Margin="257,193,0,0" VerticalAlignment="Top" Foreground="#FF707070"/>
+        <TextBlock x:Name="statusUpdate" Text="Status Update" HorizontalAlignment="Left" Margin="257,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="110" FontWeight="Bold"/>
+        <DataGrid Name="statusGrid" Margin="256,261,25,108" IsReadOnly="True" />
+        <Button x:Name="accept_button" Content="Finish" HorizontalAlignment="Left" Margin="700,347,0,0" VerticalAlignment="Top" Width="75" Background="#FF000050" BorderBrush="#FF000050"/>
+        <Button x:Name="deny_button" Content="Reject" HorizontalAlignment="Left" Margin="601,347,0,0" VerticalAlignment="Top" Width="75" BorderBrush="#FF707070" Background="#FF707070"/>
+        <Image x:Name="footer" Margin="44,399,670,10" RenderTransformOrigin="0.826,0.549" Source="clara_logo_2.png"/>
+        <TextBlock x:Name="footer1" HorizontalAlignment="Left" Margin="190,399,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer2" HorizontalAlignment="Left" Margin="190,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Run Text="Clara is a platform to connect college"/><LineBreak/><Run Text="students and college administrative staff "/><LineBreak/><Run Text="on reservation request"/></TextBlock>
+        <TextBlock x:Name="footer3" HorizontalAlignment="Left" Margin="383,399,0,0" TextWrapping="Wrap" Text="Contact Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer4" HorizontalAlignment="Left" Margin="383,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Span Foreground="White" FontFamily="Open Sans"><Run Text="You can just contact Ilyas, Fajar, Indra, Tiara, Gebby or Ubai if this platform has bugs that annoy you so much that you have to contact them."/></Span></TextBlock>
     </Grid>
 </basic:MyPage>
