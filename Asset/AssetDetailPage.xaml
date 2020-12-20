@@ -13,13 +13,6 @@
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        <Image x:Name="clara_logo" Margin="37,5,677,422" Source="clara_logo_1.png"/>
-        <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,10,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" Foreground="#FF000050"/>
-        <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="317,10,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050"/>
-        <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="392,10,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050"/>
-        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="740,10,0,0" Foreground="#FF000050"/>
-        <TextBlock x:Name="detail_asset_label" Text="Detail Asset" Margin="140,72,545,344" FontSize="20" Foreground="#FF000050" />
-        <Image x:Name="line" Margin="144,5,626,422" Source="line.png"/>
         <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="24" Margin="466,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
         <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="352,130,0,0" FontWeight="Bold" FontSize="16" Foreground="#707070"/>
         <Image x:Name="asset_image" HorizontalAlignment="Left" Height="172" Margin="140,110,0,0" VerticalAlignment="Top" Width="182" Stretch="Fill" Source="no-image.png"/>

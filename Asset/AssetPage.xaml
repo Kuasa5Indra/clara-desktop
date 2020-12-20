@@ -14,12 +14,6 @@
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        <Image x:Name="clara_logo" Margin="37,5,677,422" Source="clara_logo_1.png"/>
-        <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,10,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" Foreground="#FF000050"/>
-        <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="317,10,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050"/>
-        <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="392,10,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050"/>
-        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="740,10,0,0" Foreground="#FF000050"/>
-        <Image x:Name="line" Margin="144,5,626,422" Source="line.png"/>
         <Button x:Name="createAssetBtn" Content="Add Asset" HorizontalAlignment="Left" Margin="688,54,0,0" VerticalAlignment="Top" Width="98" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
         <ListView x:Name="asset_listview" HorizontalAlignment="Left" Height="253" Margin="52,92,0,0" VerticalAlignment="Top" Width="697" MouseDoubleClick="asset_listview_MouseDoubleClick">
             <ListView.ItemTemplate>
