@@ -4,12 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CLARA_Desktop.Asset"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AssetPage">
+      Title="AssetPage"
+      FontFamily="{StaticResource OpenSans}">
 
     <Grid>
-        <Button x:Name="createAssetBtn" Content="Create Asset" HorizontalAlignment="Left" Margin="52,53,0,0" VerticalAlignment="Top" Width="96"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+        </Grid.Background>
+        <Button x:Name="createAssetBtn" Content="Add Asset" HorizontalAlignment="Left" Margin="688,54,0,0" VerticalAlignment="Top" Width="98" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
         <ListView x:Name="asset_listview" HorizontalAlignment="Left" Height="253" Margin="52,92,0,0" VerticalAlignment="Top" Width="697" MouseDoubleClick="asset_listview_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -21,9 +26,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="674,363,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="581,363,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="search_txtBox" HorizontalAlignment="Left" Height="23" Margin="503,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
-        <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="674,58,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="674,350,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold"/>
+        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="578,350,0,0" VerticalAlignment="Top" Width="87" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold"/>
+        <TextBlock x:Name="asset_label" Text="Asset" Margin="52,52,677,371" FontSize="20" Foreground="#FF000050" />
+        <StackPanel Orientation="Horizontal" Width="190" VerticalAlignment="Top" Margin="350,54,0,0">
+            <TextBox x:Name="search_txtBox" 
+                     materialDesign:HintAssist.Hint="Search..." Width="169"/>
+            <materialDesign:PackIcon x:Name="search_button" Kind="Search" Foreground="#707070" VerticalAlignment="Center" Height="23" Width="27"/>
+        </StackPanel>
+        <Image x:Name="footer" Margin="44,399,670,10" RenderTransformOrigin="0.826,0.549" Source="clara_logo_2.png"/>
+        <TextBlock x:Name="footer1" HorizontalAlignment="Left" Margin="190,399,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer2" HorizontalAlignment="Left" Margin="190,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Run Text="Clara is a platform to connect college"/><LineBreak/><Run Text="students and college administrative staff "/><LineBreak/><Run Text="on reservation request"/></TextBlock>
+        <TextBlock x:Name="footer3" HorizontalAlignment="Left" Margin="383,399,0,0" TextWrapping="Wrap" Text="Contact Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="footer4" HorizontalAlignment="Left" Margin="383,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Span Foreground="White"><Run Text="You can just contact Ilyas, Fajar, Indra, Tiara, Gebby or Ubai if this platform has bugs that annoy you so much that you have to contact them."/></Span></TextBlock>
     </Grid>
 </basic:MyPage>
