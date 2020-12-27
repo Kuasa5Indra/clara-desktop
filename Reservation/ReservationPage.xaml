@@ -17,13 +17,6 @@
         <TextBox x:Name="search_txtBox" HorizontalAlignment="Left" Height="23" Margin="516,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
         <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="689,19,0,0" VerticalAlignment="Top" Width="75" Background="#FF000050" BorderBrush="#FF000050"/>
         <DataGrid x:Name="reservationsGrid" Margin="24,60,36,121" IsReadOnly="True" MouseDoubleClick="reservationsGrid_MouseDoubleClick">
-            <DataGrid.Columns>
-                <materialDesign:DataGridTextColumn Header="No"/>
-                <materialDesign:DataGridTextColumn Header="Date"/>
-                <materialDesign:DataGridTextColumn Header="Reservee"/>
-                <materialDesign:DataGridTextColumn Header="Item Reserved"/>
-                <materialDesign:DataGridTextColumn Header="Status"/>    
-            </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="689,342,0,0" VerticalAlignment="Top" Width="75" BorderBrush="#FF000050" Background="#FF000050"/>
         <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="594,342,0,0" VerticalAlignment="Top" Width="75" Background="#FF000050" BorderBrush="#FF000050"/>

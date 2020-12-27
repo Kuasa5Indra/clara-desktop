@@ -32,7 +32,7 @@
         <StackPanel Orientation="Horizontal" Width="190" VerticalAlignment="Top" Margin="350,54,0,0">
             <TextBox x:Name="search_txtBox" 
                      materialDesign:HintAssist.Hint="Search..." Width="169"/>
-            <materialDesign:PackIcon x:Name="search_button" Kind="Search" Foreground="#707070" VerticalAlignment="Center" Height="23" Width="27"/>
+            <materialDesign:PackIcon x:Name="search_button" Kind="Search" Foreground="#707070" VerticalAlignment="Center" Height="23" Width="27" MouseDown="SearchAssetName" Background="Transparent"/>
         </StackPanel>
         <Image x:Name="footer" Margin="44,399,670,10" RenderTransformOrigin="0.826,0.549" Source="clara_logo_2.png"/>
         <TextBlock x:Name="footer1" HorizontalAlignment="Left" Margin="190,399,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
