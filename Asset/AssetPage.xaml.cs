@@ -28,7 +28,6 @@ namespace CLARA_Desktop.Asset
         private IMyButton createAssetButton;
         private IMyButton previousPageButton;
         private IMyButton nextPageButton;
-        private IMyButton searchButton;
         private IMyTextBox searchTextBox;
         private int currentPage;
 
@@ -52,7 +51,6 @@ namespace CLARA_Desktop.Asset
             createAssetButton = builderButton.activate(this, "createAssetBtn").addOnClick(this, "RouteToCreateAssetPage");
             previousPageButton = builderButton.activate(this, "previous_page_button").addOnClick(this, "MoveToPreviousPage");
             nextPageButton = builderButton.activate(this, "next_page_button").addOnClick(this, "MoveToNextPage");
-            searchButton = builderButton.activate(this, "search_button").addOnClick(this, "SearchAssetName");
             searchTextBox = builderTextBox.activate(this, "search_txtBox");
         }
 
@@ -92,15 +90,7 @@ namespace CLARA_Desktop.Asset
 
         public void SearchAssetName()
         {
-            string name = searchTextBox.getText();
-            if (name != "")
-            {
-                getController().callMethod("SearchAsset", name);
-            }
-            else
-            {
-                GetAssets();
-            }
+            
         }
 
         public void MoveToPreviousPage()
@@ -127,6 +117,19 @@ namespace CLARA_Desktop.Asset
             ListView Item = (ListView)sender;
             Model.Asset asset = (Model.Asset)Item.SelectedItem;
             this.NavigationService.Navigate(new AssetDetailPage(asset));
+        }
+
+        private void SearchAssetName(object sender, MouseButtonEventArgs e)
+        {
+            string name = searchTextBox.getText();
+            if (name != "")
+            {
+                getController().callMethod("SearchAsset", name);
+            }
+            else
+            {
+                GetAssets();
+            }
         }
     }
 }
