@@ -7,7 +7,8 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="CLARA_Desktop.Reservation.ReservationPage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ReservationPage">
+      Title="ReservationPage"
+      FontFamily="{StaticResource OpenSans}">
 
     <Grid>
         <Grid.Background>
