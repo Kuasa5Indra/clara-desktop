@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:CLARA_Desktop.Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DashboardPage">
+      Title="DashboardPage"
+      FontFamily="{StaticResource OpenSans}">
 
     <Grid>
         <Grid.Background>

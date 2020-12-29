@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:CLARA_Desktop.Home"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HomePage">
+      Title="HomePage"
+      FontFamily="{StaticResource OpenSans}">
 
     <Grid>
         <Grid.Background>

@@ -7,7 +7,8 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Login Page">
+      Title="Login Page"
+      FontFamily="{StaticResource OpenSans}">
 
     <Grid Background="White">
         <Image x:Name="clara_logo" Source="clara_logo_1.png" Margin="99,49,517,326"/>
