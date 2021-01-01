@@ -66,5 +66,10 @@ namespace CLARA_Desktop.Login
                 this.NavigationService.Navigate(new DashboardPage());
             });
         }
+
+        private void email_textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

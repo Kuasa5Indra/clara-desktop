@@ -106,5 +106,10 @@ namespace CLARA_Desktop.Reservation
             Model.Reservation reservation = (Model.Reservation)Item.SelectedItem;
             this.NavigationService.Navigate(new ReservationDetailPage(reservation));
         }
+
+        private void previous_page_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
