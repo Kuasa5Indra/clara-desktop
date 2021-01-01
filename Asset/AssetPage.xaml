@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CLARA_Desktop.Asset"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="AssetPage"
       FontFamily="{StaticResource OpenSans}">
 
@@ -14,8 +14,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        <Button x:Name="createAssetBtn" Content="Add Asset" HorizontalAlignment="Left" Margin="688,54,0,0" VerticalAlignment="Top" Width="98" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
-        <ListView x:Name="asset_listview" HorizontalAlignment="Left" Height="253" Margin="52,92,0,0" VerticalAlignment="Top" Width="697" MouseDoubleClick="asset_listview_MouseDoubleClick">
+        <Button x:Name="createAssetBtn" Content="Add Asset" HorizontalAlignment="Left" Margin="862,67,0,0" VerticalAlignment="Top" Width="120" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
+        <ListView x:Name="asset_listview" HorizontalAlignment="Left" Height="379" Margin="55,140,0,0" VerticalAlignment="Top" Width="1163" MouseDoubleClick="asset_listview_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="174" Width="141" Orientation="Vertical">
@@ -26,18 +26,13 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="674,350,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold"/>
-        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="578,350,0,0" VerticalAlignment="Top" Width="87" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold"/>
-        <TextBlock x:Name="asset_label" Text="Asset" Margin="52,52,677,371" FontSize="20" Foreground="#FF000050" />
-        <StackPanel Orientation="Horizontal" Width="190" VerticalAlignment="Top" Margin="350,54,0,0">
+        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="1125,540,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold" Height="40" FontSize="18" RenderTransformOrigin="1.08,0.5"/>
+        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="988,540,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold" Height="40" FontSize="18" RenderTransformOrigin="1.36,0.5"/>
+        <TextBlock x:Name="asset_label" Text="Asset" Margin="55,67,680,613" FontSize="30" Foreground="#FF000050" />
+        <StackPanel Orientation="Horizontal" Width="200" VerticalAlignment="Top" Margin="1018,66,62,0">
             <TextBox x:Name="search_txtBox" 
-                     materialDesign:HintAssist.Hint="Search..." Width="169"/>
-            <materialDesign:PackIcon x:Name="search_button" Kind="Search" Foreground="#707070" VerticalAlignment="Center" Height="23" Width="27" MouseDown="SearchAssetName" Background="Transparent"/>
+                     materialDesign:HintAssist.Hint="Search..." Width="170" FontSize="20" Height="40"/>
+            <materialDesign:PackIcon x:Name="search_button" Kind="Search" Foreground="#707070" VerticalAlignment="Stretch" Height="28" Width="28" MouseDown="SearchAssetName" Background="Transparent"/>
         </StackPanel>
-        <Image x:Name="footer" Margin="44,399,670,10" RenderTransformOrigin="0.826,0.549" Source="clara_logo_2.png"/>
-        <TextBlock x:Name="footer1" HorizontalAlignment="Left" Margin="190,399,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <TextBlock x:Name="footer2" HorizontalAlignment="Left" Margin="190,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Run Text="Clara is a platform to connect college"/><LineBreak/><Run Text="students and college administrative staff "/><LineBreak/><Run Text="on reservation request"/></TextBlock>
-        <TextBlock x:Name="footer3" HorizontalAlignment="Left" Margin="383,399,0,0" TextWrapping="Wrap" Text="Contact Us" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <TextBlock x:Name="footer4" HorizontalAlignment="Left" Margin="383,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="6" Width="150"><Span Foreground="White"><Run Text="You can just contact Ilyas, Fajar, Indra, Tiara, Gebby or Ubai if this platform has bugs that annoy you so much that you have to contact them."/></Span></TextBlock>
     </Grid>
 </basic:MyPage>

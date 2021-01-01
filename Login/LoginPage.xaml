@@ -6,38 +6,39 @@
       xmlns:local="clr-namespace:CLARA_Desktop.Login"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="Login Page"
       FontFamily="{StaticResource OpenSans}">
 
     <Grid Background="White">
-        <Image x:Name="clara_logo" Source="clara_logo_1.png" Margin="99,49,517,326"/>
-        <TextBlock Text="Sign into your account!" TextAlignment="Center" VerticalAlignment="Top" Width="184" Margin="99,124,517,0" FontFamily="Open Sans" FontSize="14"/>
+        <Image x:Name="clara_logo" Source="clara_logo_1.png" Margin="157,194,923,432"/>
+        <TextBlock Text="Sign into your account!" TextAlignment="Center" VerticalAlignment="Top" Margin="157,269,923,0" FontFamily="Open Sans" FontSize="18"/>
         <Button 
             x:Name="login_button" 
             Content="SIGN IN" 
             HorizontalAlignment="Left" 
-            Margin="99,297,0,0" 
+            Margin="129,450,0,0" 
             VerticalAlignment="Top" 
-            Width="184" 
+            Width="250" 
+            Height="40"
             Background="#FF000050" 
             BorderBrush="#FF000050" 
             FontFamily="Open Sans" 
             FontWeight="Bold"/>
-        <StackPanel Orientation="Horizontal" Width="184" VerticalAlignment="Top" Margin="99,175,517,0">
-            <materialDesign:PackIcon Kind="Email" Foreground="#707070" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Width="250" VerticalAlignment="Top" Margin="129,336,901,0">
+            <materialDesign:PackIcon Kind="Email" Foreground="#707070" VerticalAlignment="Center" Width="18" Height="18"/>
             <TextBox x:Name="email_textBox" 
-                     materialDesign:HintAssist.Hint="Email" FontFamily="Open Sans" Width="169"/>
+                     materialDesign:HintAssist.Hint="Email" FontFamily="Open Sans" Width="250" TextChanged="email_textBox_TextChanged" Height="30" FontSize="16"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Width="184" VerticalAlignment="Top" Margin="99,224,517,0">
-            <materialDesign:PackIcon Kind="Lock" Foreground="#707070" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Width="250" VerticalAlignment="Top" Margin="129,386,901,0">
+            <materialDesign:PackIcon Kind="Lock" Foreground="#707070" VerticalAlignment="Center" Width="18" Height="18" RenderTransformOrigin="4.333,0.944"/>
             <PasswordBox x:Name="password_box"
-                         materialDesign:HintAssist.Hint="Password" Width="169"/>
+                         materialDesign:HintAssist.Hint="Password" FontFamily="Open Sans" Width="250" Height="30" FontSize="16"/>
         </StackPanel>
         <Image 
             x:Name="sign_in_image" 
             Source="undraw_responsive_6c8s.png" 
-            Margin="333,83,42,132"/>
+            Margin="470,160,80,160"/>
 
     </Grid>
 </basic:MyPage>
