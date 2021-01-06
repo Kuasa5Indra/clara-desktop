@@ -35,6 +35,19 @@ namespace CLARA_Desktop.Reservation
             var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
+        public async void SearchReservation(string assetName)
+        {
+            var client = new ApiClient(API.URL);
+            var request = new ApiRequestBuilder();
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint(API.reservationAsset.Replace("{name}", assetName))
+                .setRequestMethod(HttpMethod.Get);
+            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
+            client.setOnSuccessRequest(CallbackSuccess);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
         public async void LoadReservationPage(int currentPage)
         {
             var client = new ApiClient(API.URL);

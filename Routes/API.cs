@@ -28,6 +28,7 @@ namespace CLARA_Desktop.Routes
         public static String reservation = "reservations";
         public static String reservationId = "reservations/{Id}";
         public static String reservationPage = "reservations?page={number}";
+        public static String reservationAsset = "reservations/search?asset={name}";
         public static String recentReservation = "reservations?limit=5";
         public static String asset = "assets";
         public static String assetId = "asset/{id}";

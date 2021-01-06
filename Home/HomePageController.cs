@@ -61,20 +61,6 @@ namespace CLARA_Desktop.Home
             getView().callMethod("SetReturnedReservationLabel", (int)response.getJObject()["count"]);
         }
 
-        public async void CountDeniedReservation()
-        {
-            var client = new ApiClient(API.URL);
-            var requestBuilder = new ApiRequestBuilder();
-            client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
-
-            var request = requestBuilder.buildHttpRequest()
-                .setEndpoint(API.countStatusReservation.Replace("{status}", "denied"))
-                .setRequestMethod(HttpMethod.Get);
-
-            var response = await client.sendRequest(request.getApiRequestBundle());
-            /*getView().callMethod("SetReturnedReservationLabel", (int)response.getJObject()["count"]);*/
-        }
-
         public async void LoadRecentReservation()
         {
             var client = new ApiClient(API.URL);
