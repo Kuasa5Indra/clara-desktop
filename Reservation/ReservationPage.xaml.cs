@@ -17,6 +17,7 @@ using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.DataGrid;
 using Velacro.UIElements.ListView;
+using Velacro.UIElements.TextBox;
 
 namespace CLARA_Desktop.Reservation
 {
@@ -28,9 +29,12 @@ namespace CLARA_Desktop.Reservation
 
         private BuilderDataGrid builderDataGrid;
         private BuilderButton builderButton;
+        private BuilderTextBox builderTextBox;
         private IMyDataGrid reservationDataGrid;
         private IMyButton previousButton;
         private IMyButton nextButton;
+        private IMyButton searchButton;
+        private IMyTextBox searchTextBox;
         private int currentPage = 1;
 
         public ReservationPage()
@@ -47,17 +51,26 @@ namespace CLARA_Desktop.Reservation
         {
             builderDataGrid = new BuilderDataGrid();
             builderButton = new BuilderButton();
+            builderTextBox = new BuilderTextBox();
         }
         private void InitUIElements()
         {
             reservationDataGrid = builderDataGrid.activate(this, "reservationsGrid");
             previousButton = builderButton.activate(this, "previous_page_button").addOnClick(this, "MoveToPreviousPage");
             nextButton = builderButton.activate(this, "next_page_button").addOnClick(this, "MoveToNextPage");
+            searchButton = builderButton.activate(this, "search_button").addOnClick(this, "GetReservationAsset");
+            searchTextBox = builderTextBox.activate(this, "search_txtBox");
         }
 
         public void GetReservation()
         {
             getController().callMethod("GetReservationsList");
+        }
+
+        public void GetReservationAsset()
+        {
+            string name = searchTextBox.getText();
+            getController().callMethod("SearchReservation", name);
         }
         public void UpdateGrid(MyList<Model.Reservation> listReservation, int currentPage, int lastPage)
         {
