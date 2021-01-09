@@ -26,8 +26,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="1125,540,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold" Height="40" FontSize="18" RenderTransformOrigin="1.08,0.5"/>
-        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="988,540,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold" Height="40" FontSize="18" RenderTransformOrigin="1.36,0.5"/>
+        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="1118,549,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold" Height="40" FontSize="18" RenderTransformOrigin="1.08,0.5"/>
+        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="988,549,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" FontWeight="SemiBold" Height="40" FontSize="18" RenderTransformOrigin="1.36,0.5"/>
         <TextBlock x:Name="asset_label" Text="Asset" Margin="55,67,680,613" FontSize="30" Foreground="#FF000050" />
         <StackPanel Orientation="Horizontal" Width="200" VerticalAlignment="Top" Margin="1018,66,62,0">
             <TextBox x:Name="search_txtBox" 
