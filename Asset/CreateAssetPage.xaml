@@ -14,13 +14,13 @@
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
         <TextBlock x:Name="create_asset_label" Text="Add Asset" Margin="55,67,680,613" FontSize="30" Foreground="#FF000050" />
-        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="862,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
-        <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="750,227,0,0" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
-        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="150,115,0,0" VerticalAlignment="Top" Width="350" Source="no-image.png" Stretch="Fill"/>
-        <Button x:Name="create_button" Content="Create" HorizontalAlignment="Left" Margin="1047,392,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
-        <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="910,392,0,0" VerticalAlignment="Top" Width="100" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070" Height="40" FontSize="18"/>
-        <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="750,292,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
-        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="40" Margin="1069,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
-        <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="275,466,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
+        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="770,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
+        <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="658,227,0,0" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
+        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="236,115,0,0" VerticalAlignment="Top" Width="350" Source="no-image.png" Stretch="Fill"/>
+        <Button x:Name="create_button" Content="Create" HorizontalAlignment="Left" Margin="955,392,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
+        <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="818,392,0,0" VerticalAlignment="Top" Width="100" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070" Height="40" FontSize="18"/>
+        <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="658,292,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
+        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="40" Margin="977,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
+        <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="361,466,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
     </Grid>
 </basic:MyPage>

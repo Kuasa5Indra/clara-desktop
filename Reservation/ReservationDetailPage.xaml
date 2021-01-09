@@ -21,11 +21,11 @@
         <TextBlock Name="reservee" Text="Reservee" HorizontalAlignment="Left" Height="24" Margin="364,151,0,0" VerticalAlignment="Top" Width="350" Foreground="#FF707070" FontSize="16"/>
         <TextBlock Name="classroom" Text="Class" HorizontalAlignment="Left" Height="18" Margin="364,175,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="-3.364,-0.333" Foreground="#FF707070" FontSize="16"/>
         <TextBlock x:Name="nrp" HorizontalAlignment="Left" Margin="364,203,0,0" VerticalAlignment="Top" Text="NRP" Foreground="#FF707070" FontSize="16"/>
-        <TextBlock Name="begin"  Text="Begin Date" HorizontalAlignment="Left" Margin="364,240,0,0" VerticalAlignment="Top" Height="20" Width="94" Foreground="#FF707070" FontSize="16"/>
-        <TextBlock Name="end" Text="Return Date" HorizontalAlignment="Left" Margin="364,265,0,0" VerticalAlignment="Top" Foreground="#FF707070" FontSize="16"/>
-        <TextBlock x:Name="statusUpdate" Text="Status Update" HorizontalAlignment="Left" Margin="364,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="170" FontWeight="Bold" FontSize="20"/>
-        <DataGrid Name="statusGrid" Margin="364,334,25,156" IsReadOnly="True" />
-        <Button x:Name="accept_button" Content="Finish" HorizontalAlignment="Left" Margin="1154,569,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18"/>
-        <Button x:Name="deny_button" Content="Reject" HorizontalAlignment="Left" Margin="1045,569,0,0" VerticalAlignment="Top" Width="100" BorderBrush="#FF707070" Background="#FF707070" Height="40" FontSize="18"/>
+        <TextBlock Name="begin"  Text="Begin Date" HorizontalAlignment="Left" Margin="364,235,0,0" VerticalAlignment="Top" Height="20" Width="94" Foreground="#FF707070" FontSize="16"/>
+        <TextBlock Name="end" Text="Return Date" HorizontalAlignment="Left" Margin="364,260,0,0" VerticalAlignment="Top" Foreground="#FF707070" FontSize="16"/>
+        <TextBlock x:Name="statusUpdate" Text="Status Update" HorizontalAlignment="Left" Margin="363,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="170" FontWeight="Bold" FontSize="20"/>
+        <DataGrid Name="statusGrid" Margin="363,318,26,172" IsReadOnly="True" />
+        <Button x:Name="accept_button" Content="Finish" HorizontalAlignment="Left" Margin="1154,565,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18"/>
+        <Button x:Name="deny_button" Content="Reject" HorizontalAlignment="Left" Margin="1045,565,0,0" VerticalAlignment="Top" Width="100" BorderBrush="#FF707070" Background="#FF707070" Height="40" FontSize="18"/>
     </Grid>
 </basic:MyPage>

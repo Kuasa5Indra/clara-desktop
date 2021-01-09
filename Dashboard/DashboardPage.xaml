@@ -14,15 +14,12 @@
             <ImageBrush ImageSource="[Re] D W  Dashboard – 1.png"/>
         </Grid.Background>
         <Frame x:Name="dashboardFrame" Content="Frame" HorizontalAlignment="Left" Height="675" Margin="0,45,0,0" VerticalAlignment="Top" Width="1280" />
+        <TextBlock x:Name="home_txtBlock_Copy" HorizontalAlignment="Left" Margin="35,9,0,0" TextWrapping="Wrap" Text="CLARA" VerticalAlignment="Top" Foreground="#FF707070" FontSize="30" Width="98"/>
+        <TextBlock x:Name="home_txtBlock_Copy1" HorizontalAlignment="Left" Margin="33,9,0,0" TextWrapping="Wrap" Text="CLARA" VerticalAlignment="Top" Foreground="#FF000050" FontSize="30" Width="98"/>
+        <TextBlock x:Name="home_txtBlock_Copy2" HorizontalAlignment="Left" Margin="168,4,0,0" TextWrapping="Wrap" Text="|" VerticalAlignment="Top" Foreground="#FF000050" FontSize="36" Width="12"/>
         <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,15,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20"/>
         <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="310,15,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20"/>
         <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="395,15,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20"/>
         <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="1145,15,0,0" Foreground="#FF000050" FontSize="20"/>
-        <Image x:Name="line" Margin="144,5,1079,675">
-            <Image.Source>
-                <ImageSource>line.png</ImageSource>
-            </Image.Source>
-        </Image>
-        <Image x:Name="clara_logo" Margin="40,10,1135,675" Source="clara_logo_1.png"/>
     </Grid>
 </basic:MyPage>
