@@ -10,16 +10,22 @@
       FontFamily="{StaticResource OpenSans}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="329*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 1.png"/>
         </Grid.Background>
-        <Frame x:Name="dashboardFrame" Content="Frame" HorizontalAlignment="Left" Height="675" Margin="0,45,0,0" VerticalAlignment="Top" Width="1280" />
-        <TextBlock x:Name="home_txtBlock_Copy" HorizontalAlignment="Left" Margin="35,9,0,0" TextWrapping="Wrap" Text="CLARA" VerticalAlignment="Top" Foreground="#FF707070" FontSize="30" Width="98"/>
-        <TextBlock x:Name="home_txtBlock_Copy1" HorizontalAlignment="Left" Margin="33,9,0,0" TextWrapping="Wrap" Text="CLARA" VerticalAlignment="Top" Foreground="#FF000050" FontSize="30" Width="98"/>
-        <TextBlock x:Name="home_txtBlock_Copy2" HorizontalAlignment="Left" Margin="168,4,0,0" TextWrapping="Wrap" Text="|" VerticalAlignment="Top" Foreground="#FF000050" FontSize="36" Width="12"/>
-        <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,15,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20"/>
-        <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="310,15,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20"/>
-        <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="395,15,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20"/>
-        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="1145,15,0,0" Foreground="#FF000050" FontSize="20"/>
+
+        <Image x:Name="clara_logo" Source="clara_logo_1.png" Margin="14,4,0,12" Grid.RowSpan="2" HorizontalAlignment="Left" Width="118"/>
+        <TextBlock x:Name="home_txtBlock_Copy2" HorizontalAlignment="Left" Margin="168,4,0,0" TextWrapping="Wrap" Text="|" VerticalAlignment="Top" Foreground="#FF000050" FontSize="36" Width="12" Grid.RowSpan="2" Height="43"/>
+        <TextBlock x:Name="home_txtBlock" HorizontalAlignment="Left" Margin="224,15,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20" Grid.RowSpan="2" Height="24" Width="63"/>
+        <TextBlock x:Name="asset_txtBlock" HorizontalAlignment="Left" Margin="310,15,0,0" TextWrapping="Wrap" Text="Asset" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20" Grid.RowSpan="2" Height="24" Width="62"/>
+        <TextBlock x:Name="reservation_txtBlock" HorizontalAlignment="Left" Margin="395,15,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050" FontSize="20" Grid.RowSpan="2" Height="24" Width="120"/>
+        <TextBlock x:Name="logout_txtBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Logout" VerticalAlignment="Top" Margin="1145,15,0,0" Foreground="#FF000050" FontSize="20" Grid.RowSpan="2" Height="24" Width="63"/>
+
+        <Frame x:Name="dashboardFrame" Content="Frame" HorizontalAlignment="Left" Height="656" Margin="0,12,0,-10" VerticalAlignment="Top" Width="1280" Grid.Row="2" />
     </Grid>
 </basic:MyPage>

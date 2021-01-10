@@ -14,7 +14,8 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
     <Grid>
         <Frame x:Name="mainframe" Content="Frame" HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1272" NavigationUIVisibility="Hidden"/>
 

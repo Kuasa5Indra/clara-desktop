@@ -10,16 +10,39 @@
       FontFamily="{StaticResource OpenSans}">
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
-        </Grid.Background>
-        <TextBlock x:Name="heading1" HorizontalAlignment="Left" Margin="55,30,0,0" TextWrapping="Wrap" Text="Hello," VerticalAlignment="Top" Foreground="#FF000050" FontWeight="Bold" FontSize="32"/>
-        <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="55,70,0,0" TextWrapping="Wrap" Text="Here are the reservation data recap for this month." VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="16"/>
-        <Label Content="Waiting on Approval" HorizontalAlignment="Left" Margin="63,112,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="On Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="324,112,0,0" FontSize="14"/>
-        <Label Content="Returned" HorizontalAlignment="Left" Margin="593,112,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBlock x:Name="reservation_txtBlock_Copy1" HorizontalAlignment="Left" Margin="55,300,0,0" TextWrapping="Wrap" Text="Recent reservations" VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="16"/>
-        <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="282" Margin="55,324,0,0" VerticalAlignment="Top" Width="934" MouseDoubleClick="recent_reservation_Lv_MouseDoubleClick">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="212*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="322*"/>
+            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition Width="326*"/>
+            <ColumnDefinition Width="159*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="heading1" HorizontalAlignment="Left" Margin="0,22,0,0" TextWrapping="Wrap" Text="Hello," VerticalAlignment="Top" Foreground="#FF000050" FontWeight="Bold" FontSize="36" Height="44" Width="971" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="0,76,0,0" TextWrapping="Wrap" Text="Here are the reservation data recap for this month." VerticalAlignment="Top" Foreground="#FF000050" FontSize="20" Height="24" Width="495" Grid.ColumnSpan="2" Grid.Column="1"/>
+
+        <Rectangle Margin="0,25,36,33" Grid.Column="1" Grid.Row="1" Fill="White" RadiusX="18.5" RadiusY="18.5" Stroke="#C8C8C8" StrokeThickness="2"/>
+        <Border Width="26" BorderThickness="1" Grid.Row="1" CornerRadius="18.5,0,0,18.5" Background="#DB0000" Margin="0,25,0,33" Grid.Column="1" HorizontalAlignment="Left"/>
+        <Label Content="Waiting on Approval" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,45,0,0" FontSize="16" Height="38" Width="170" Grid.Column="1" Grid.Row="1" Foreground="#FF1F1F1F"/>
+        <Label x:Name="waiting_txtCount" Content="0" HorizontalAlignment="Left" Margin="45,73,0,0" VerticalAlignment="Top" Height="54" Width="29" Grid.Column="1" Grid.Row="1" Foreground="#FF1F1F1F" FontSize="36" FontWeight="SemiBold"/>
+
+        <Rectangle Margin="20,25,27,33" Grid.Column="2" Grid.Row="1" Fill="White" RadiusX="18.5" RadiusY="18.5" Stroke="#C8C8C8" StrokeThickness="2"/>
+        <Border Width="26" BorderThickness="1" Grid.Row="1" CornerRadius="18.5,0,0,18.5" Background="#EFB700" Margin="15,25,0,33" Grid.Column="2" HorizontalAlignment="Left"/>
+        <Label Content="On Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,45,0,0" FontSize="16" Height="31" Width="130" Grid.Column="2" Grid.Row="1" Foreground="#FF1F1F1F"/>
+        <Label x:Name="reserve_txtCount" Content="0" HorizontalAlignment="Left" Margin="59,73,0,0" VerticalAlignment="Top" Height="54" Width="29" Grid.Column="2" Grid.Row="1" Foreground="#FF1F1F1F" FontSize="36" FontWeight="SemiBold"/>
+
+        <Rectangle Margin="29,25,0,33" Grid.Column="3" Grid.Row="1" Fill="White" RadiusX="18.5" RadiusY="18.5" Stroke="#C8C8C8" StrokeThickness="2" Width="286"/>
+        <Border Width="26" BorderThickness="1" Grid.Row="1" CornerRadius="18.5,0,0,18.5" Background="#08F22D" Margin="29,25,0,33" Grid.Column="3" HorizontalAlignment="Left"/>
+        <Label Content="Returned" HorizontalAlignment="Left" Margin="74,45,0,0" VerticalAlignment="Top" FontSize="16" Grid.Column="3" Height="31" Width="98" Grid.Row="1" Foreground="#FF1F1F1F"/>
+        <Label x:Name="return_txtCount" Content="0" HorizontalAlignment="Left" Margin="74,76,0,0" VerticalAlignment="Top" Width="29" Height="54" Grid.Column="3" Grid.Row="1" Foreground="#FF1F1F1F" FontSize="36" FontWeight="SemiBold"/>
+
+        <TextBlock x:Name="reservation_txtBlock_Copy1" HorizontalAlignment="Left" Margin="0,3,0,0" TextWrapping="Wrap" Text="Recent reservations" VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="20" Height="19" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"/>
+        <ListView x:Name="recent_reservation_Lv" HorizontalAlignment="Left" Height="233" Margin="0,27,0,0" VerticalAlignment="Top" Width="971" MouseDoubleClick="recent_reservation_Lv_MouseDoubleClick" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="2">
             <ListView.View>
                 <GridView x:Name="recent_reservation_Gv">
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date_begin}"/>
@@ -29,14 +52,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Rectangle Fill="#FFDB0000" HorizontalAlignment="Left" Height="130" Stroke="Black" VerticalAlignment="Top" Width="267" Margin="65,144,0,0" RadiusY="18.5" RadiusX="18.5"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="130" Margin="96,144,0,0" Stroke="Black" VerticalAlignment="Top" Width="206"/>
-        <Label x:Name="waiting_txtCount" Content="0" HorizontalAlignment="Left" Margin="194,200,0,0" VerticalAlignment="Top" Height="34" Width="24" RenderTransformOrigin="0.167,0.794"/>
-        <Rectangle Fill="#FFEFB700" HorizontalAlignment="Left" Height="130" Stroke="Black" VerticalAlignment="Top" Width="272" Margin="384,144,0,0" RadiusY="18.5" RadiusX="18.5"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="130" Margin="416,144,0,0" Stroke="Black" VerticalAlignment="Top" Width="210"/>
-        <Label x:Name="reserve_txtCount" Content="0" HorizontalAlignment="Left" Margin="512,200,0,0" VerticalAlignment="Top" Height="34" Width="22"/>
-        <Rectangle Fill="#FF08F22D" HorizontalAlignment="Left" Height="130" Stroke="Black" VerticalAlignment="Top" Width="270" Margin="712,144,0,0" RadiusY="18.5" RadiusX="18.5"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="130" Margin="742,144,0,0" Stroke="Black" VerticalAlignment="Top" Width="210"/>
-        <Label x:Name="return_txtCount" Content="0" HorizontalAlignment="Left" Margin="844,200,0,0" VerticalAlignment="Top" Width="22" Height="34"/>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+        </Grid.Background>
+
     </Grid>
 </basic:MyPage>

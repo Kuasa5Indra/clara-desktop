@@ -11,15 +11,19 @@
       FontFamily="{StaticResource OpenSans}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="953*"/>
+            <ColumnDefinition Width="187*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="Background Reservation.png"/>
         </Grid.Background>
-        <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="55,67,680,613" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="30"/>
-        <TextBox x:Name="search_txtBox" HorizontalAlignment="Left" Height="40" Margin="882,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225"/>
-        <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="1125,63,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18"/>
-        <DataGrid x:Name="reservationsGrid" Margin="55,126,55,175" IsReadOnly="True" MouseDoubleClick="reservationsGrid_MouseDoubleClick">
-        </DataGrid>
-        <Button x:Name="next_page_button" Content="Next" HorizontalAlignment="Left" Margin="1125,566,0,0" VerticalAlignment="Top" Width="100" BorderBrush="#FF000050" Background="#FF000050" Height="40" FontSize="18"/>
-        <Button x:Name="previous_page_button" Content="Previous" HorizontalAlignment="Left" Margin="985,566,0,0" VerticalAlignment="Top" Width="105" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18" Click="previous_page_button_Click"/>
+        <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050" Width="201" FontSize="30" Height="36" Grid.Column="1"/>
+        <TextBox x:Name="search_txtBox" HorizontalAlignment="Left" Height="40" Margin="655,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" FontSize="20" Width="167"/>
+        <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="853,18,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18" Grid.Column="1"/>
+        <DataGrid x:Name="reservationsGrid" Margin="0,110,0,244" IsReadOnly="True" MouseDoubleClick="reservationsGrid_MouseDoubleClick" Grid.Column="1"/>
+        <Button x:Name="next_page_button" Content="Next" Margin="835,511,185,0" Width="120" BorderBrush="#FF000050" Background="#FF000050" Height="40" FontSize="18" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="previous_page_button" Content="Previous" Margin="680,511,153,0" Width="120" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18" Click="previous_page_button_Click" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </basic:MyPage>

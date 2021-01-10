@@ -13,15 +13,14 @@
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        
-        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="209,115,0,0" VerticalAlignment="Top" Width="350" Stretch="Fill" Source="no-image.png"/>
-        <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="334,466,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" RenderTransformOrigin="0.516,0.167" FontSize="18"/>
-        <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="618,227,0,0" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
-        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="730,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
-        <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="618,227,0,0" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
-        <Button x:Name="update_button" Content="Update" HorizontalAlignment="Left" Margin="915,392,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
-        <Button x:Name="delete_button" Content="Delete" HorizontalAlignment="Left" Margin="778,392,0,0" VerticalAlignment="Top" Width="100" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070" Height="40" FontSize="18"/>
-        <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="618,292,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="#707070"/>
-        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="40" Margin="937,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="Bold"/>
+        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="222,24,0,0" VerticalAlignment="Top" Width="350" Stretch="Fill" Source="no-image.png"/>
+        <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="347,375,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" RenderTransformOrigin="0.516,0.167" FontSize="18"/>
+        <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="631,136,0,0" FontSize="20" Foreground="#1F1F1F" FontWeight="SemiBold"/>
+        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="743,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="SemiBold" FontSize="16" Foreground="#1F1F1F"/>
+        <Button x:Name="update_button" Content="Update" HorizontalAlignment="Left" Margin="928,301,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
+        <Button x:Name="delete_button" Content="Delete" HorizontalAlignment="Left" Margin="791,301,0,0" VerticalAlignment="Top" Width="100" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070" Height="40" FontSize="18"/>
+        <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="631,201,0,0" VerticalAlignment="Top" FontWeight="SemiBold" FontSize="20" Foreground="#1F1F1F"/>
+        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="40" Margin="950,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="16" FontWeight="SemiBold" Foreground="#1F1F1F"/>
+        <TextBlock x:Name="detail_asset_label" Text="Asset Detail" Margin="55,22,0,0" FontSize="30" Foreground="#FF000050" HorizontalAlignment="Left" VerticalAlignment="Top" Height="77" Width="210" />
     </Grid>
 </basic:MyPage>
