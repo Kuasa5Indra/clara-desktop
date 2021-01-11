@@ -18,6 +18,7 @@ using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
 using Velacro.UIElements.PasswordBox;
 using CLARA_Desktop.Dashboard;
+using System.Text.RegularExpressions;
 
 namespace CLARA_Desktop.Login
 {
@@ -74,6 +75,11 @@ namespace CLARA_Desktop.Login
             {
                 this.NavigationService.Navigate(new DashboardPage());
             });
+        }
+
+        private void email_textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[a-z0-9]+@[a-z.]+[.][a-z]{2,3}").IsMatch(e.Text);
         }
     }
 }
