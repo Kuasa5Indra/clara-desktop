@@ -18,6 +18,7 @@ using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBox;
 using Velacro.UIElements.PasswordBox;
 using CLARA_Desktop.Dashboard;
+using System.Text.RegularExpressions;
 
 namespace CLARA_Desktop.Login
 {
@@ -56,7 +57,16 @@ namespace CLARA_Desktop.Login
 
         public void OnClickLoginButton()
         {
-            getController().callMethod("Login", email_textBox.Text, password_box.Password);
+            string email = emailTxtBox.getText();
+            string password = passwordBox.getPassword();
+            if(email == "" || password == "")
+            {
+                MessageBox.Show("Please fill all the fields", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                getController().callMethod("Login", email, password);
+            }
         }
 
         public void RouteToDashboard()
@@ -67,9 +77,9 @@ namespace CLARA_Desktop.Login
             });
         }
 
-        private void email_textBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void email_textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            e.Handled = new Regex("[a-z0-9]+@[a-z.]+[.][a-z]{2,3}").IsMatch(e.Text);
         }
     }
 }

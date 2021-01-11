@@ -28,7 +28,7 @@
         <StackPanel Orientation="Horizontal" Width="250" VerticalAlignment="Top" Margin="201,347,829,0">
             <materialDesign:PackIcon Kind="Email" Foreground="#707070" VerticalAlignment="Center" Width="18" Height="18"/>
             <TextBox x:Name="email_textBox" 
-                     materialDesign:HintAssist.Hint="Email" FontFamily="Open Sans" Width="250" TextChanged="email_textBox_TextChanged" Height="30" FontSize="16"/>
+                     materialDesign:HintAssist.Hint="Email" FontFamily="Open Sans" Width="250" Height="30" FontSize="16" PreviewTextInput="email_textBox_PreviewTextInput"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Width="250" VerticalAlignment="Top" Margin="201,397,829,0">
             <materialDesign:PackIcon Kind="Lock" Foreground="#707070" VerticalAlignment="Center" Width="18" Height="18" RenderTransformOrigin="4.333,0.944"/>

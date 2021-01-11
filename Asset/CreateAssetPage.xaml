@@ -13,13 +13,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="770,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="16" FontWeight="SemiBold" Foreground="#1F1F1F"/>
+        <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="770,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="16" FontWeight="SemiBold" Foreground="#1F1F1F" PreviewTextInput="name_txtBox_PreviewTextInput"/>
         <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="658,137,0,0" FontSize="20" Foreground="#1F1F1F" FontWeight="SemiBold"/>
         <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="236,25,0,0" VerticalAlignment="Top" Width="350" Source="no-image.png" Stretch="Fill"/>
         <Button x:Name="create_button" Content="Create" HorizontalAlignment="Left" Margin="955,302,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
         <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="818,302,0,0" VerticalAlignment="Top" Width="100" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070" Height="40" FontSize="18"/>
         <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="658,202,0,0" VerticalAlignment="Top" FontWeight="SemiBold" FontSize="20" Foreground="#1F1F1F" />
-        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="40" Margin="977,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="SemiBold" Foreground="#1F1F1F" FontSize="16"/>
+        <TextBox x:Name="quantity_txtBox" HorizontalAlignment="Left" Height="40" Margin="977,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="SemiBold" Foreground="#1F1F1F" FontSize="16" PreviewTextInput="quantity_txtBox_PreviewTextInput"/>
         <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="361,376,0,0" VerticalAlignment="Top" Width="84" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050"/>
         <TextBlock x:Name="create_asset_label" Text="Create Asset" Margin="55,22,0,0" FontSize="30" Foreground="#FF000050" HorizontalAlignment="Left" VerticalAlignment="Top" Height="66" Width="176" />
     </Grid>
