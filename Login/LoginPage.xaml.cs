@@ -56,7 +56,16 @@ namespace CLARA_Desktop.Login
 
         public void OnClickLoginButton()
         {
-            getController().callMethod("Login", email_textBox.Text, password_box.Password);
+            string email = emailTxtBox.getText();
+            string password = passwordBox.getPassword();
+            if(email == "" || password == "")
+            {
+                MessageBox.Show("Please fill all the fields", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                getController().callMethod("Login", email, password);
+            }
         }
 
         public void RouteToDashboard()
@@ -65,11 +74,6 @@ namespace CLARA_Desktop.Login
             {
                 this.NavigationService.Navigate(new DashboardPage());
             });
-        }
-
-        private void email_textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -26,7 +26,7 @@ namespace CLARA_Desktop.Asset
             client.setAuthorizationToken(File.ReadAllText("jwt.txt"));
 
             var request = requestBuilder.buildHttpRequest()
-                .setEndpoint(API.asset)
+                .setEndpoint(API.assets)
                 .setRequestMethod(HttpMethod.Get);
             var response = await client.sendRequest(request.getApiRequestBundle());
             string json = response.getJObject()["data"].ToString();
@@ -96,7 +96,7 @@ namespace CLARA_Desktop.Asset
                 .setEndpoint(API.assetId.Replace("{id}", newAsset.Id))
                 .setRequestMethod(HttpMethod.Post);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
+            MessageBox.Show(response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public async void DeleteAsset(string id)
@@ -109,7 +109,7 @@ namespace CLARA_Desktop.Asset
                 .setEndpoint(API.assetId.Replace("{id}", id))
                 .setRequestMethod(HttpMethod.Delete);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
+            MessageBox.Show(response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             getView().callMethod("RouteToAssetPage");
         }
 

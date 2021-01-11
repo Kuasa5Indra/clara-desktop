@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -85,21 +86,44 @@ namespace CLARA_Desktop.Asset
         {
             string name = assetTextBox.getText();
             string quantity = quantityTextBox.getText();
-            Model.Asset newAsset = new Model.Asset();
-            newAsset.Id = asset.Id;
-            newAsset.Name = name;
-            newAsset.Quantity = Int32.Parse(quantity);
-            getController().callMethod("UpdateAsset", newAsset, myFile);
+            if (name == "" || quantity == "")
+            {
+                MessageBox.Show("Please fill all the fields", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                Model.Asset newAsset = new Model.Asset();
+                newAsset.Id = asset.Id;
+                newAsset.Name = name;
+                newAsset.Quantity = Int32.Parse(quantity);
+                getController().callMethod("UpdateAsset", newAsset, myFile);
+            }
         }
 
         public void OnClickDeleteButton()
         {
-            getController().callMethod("DeleteAsset", asset.Id);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this asset ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    getController().callMethod("DeleteAsset", asset.Id);
+                    break;
+            }
         }
 
         public void RouteToAssetPage()
         {
             this.NavigationService.Navigate(new AssetPage());
+        }
+
+        private void name_txtBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^a-zA-Z]+").IsMatch(e.Text);
+        }
+
+        private void quantity_txtBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
     }
 }
