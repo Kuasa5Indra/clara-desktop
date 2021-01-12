@@ -20,7 +20,7 @@
             <ImageBrush ImageSource="Background Reservation.png"/>
         </Grid.Background>
         <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Reservation" VerticalAlignment="Top" Foreground="#FF000050" Width="201" FontSize="30" Height="36" Grid.Column="1"/>
-        <TextBox x:Name="search_txtBox" HorizontalAlignment="Left" Height="40" Margin="655,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" FontSize="20" Width="167"/>
+        <TextBox x:Name="search_txtBox" materialDesign:HintAssist.Hint="Search Asset" HorizontalAlignment="Left" Height="40" Margin="655,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" FontSize="20" Width="167"/>
         <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="853,18,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18" Grid.Column="1"/>
         <DataGrid x:Name="reservationsGrid" Margin="0,110,0,244" IsReadOnly="True" MouseDoubleClick="reservationsGrid_MouseDoubleClick" Grid.Column="1"/>
         <Button x:Name="next_page_button" Content="Next" Margin="835,511,185,0" Width="120" BorderBrush="#FF000050" Background="#FF000050" Height="40" FontSize="18" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2"/>

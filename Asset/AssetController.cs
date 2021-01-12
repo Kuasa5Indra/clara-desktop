@@ -28,12 +28,8 @@ namespace CLARA_Desktop.Asset
             var request = requestBuilder.buildHttpRequest()
                 .setEndpoint(API.assets)
                 .setRequestMethod(HttpMethod.Get);
+            client.setOnSuccessRequest(CallbackSuccess);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            string json = response.getJObject()["data"].ToString();
-            int currentPage = Int32.Parse(response.getJObject()["current_page"].ToString());
-            int lastPage = Int32.Parse(response.getJObject()["last_page"].ToString());
-            List<Model.Asset> assets = JsonConvert.DeserializeObject<List<Model.Asset>>(json);
-            getView().callMethod("SetAssetListView", SetImagePath(assets), currentPage, lastPage);
         }
 
         public async void LoadAssetPage(int currentPage)
@@ -45,11 +41,20 @@ namespace CLARA_Desktop.Asset
             var request = requestBuilder.buildHttpRequest()
                 .setEndpoint(API.assetPage.Replace("{number}", currentPage.ToString()))
                 .setRequestMethod(HttpMethod.Get);
+            client.setOnSuccessRequest(CallbackSuccess);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            string json = response.getJObject()["data"].ToString();
-            int lastPage = Int32.Parse(response.getJObject()["last_page"].ToString());
-            List<Model.Asset> assets = JsonConvert.DeserializeObject<List<Model.Asset>>(json);
-            getView().callMethod("SetAssetListView", SetImagePath(assets), currentPage, lastPage);
+        }
+
+        public void CallbackSuccess(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                string json = _response.getJObject()["data"].ToString();
+                int currentPage = Int32.Parse(_response.getJObject()["current_page"].ToString());
+                int lastPage = Int32.Parse(_response.getJObject()["last_page"].ToString());
+                List<Model.Asset> assets = JsonConvert.DeserializeObject<List<Model.Asset>>(json);
+                getView().callMethod("SetAssetListView", SetImagePath(assets), currentPage, lastPage);
+            }
         }
 
         private List<Model.Asset> SetImagePath(List<Model.Asset> assets)

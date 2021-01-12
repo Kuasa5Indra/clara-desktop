@@ -61,24 +61,27 @@ namespace CLARA_Desktop.Asset
 
         public void SetAssetListView(List<Model.Asset> assets, int currentPage, int lastPage)
         {
-            asset_listview.ItemsSource = assets;
-            if (currentPage == 1)
+            this.Dispatcher.Invoke(() =>
             {
-                previous_page_button.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                previous_page_button.Visibility = Visibility.Visible;
-            }
+                asset_listview.ItemsSource = assets;
+                if (currentPage == 1)
+                {
+                    previous_page_button.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    previous_page_button.Visibility = Visibility.Visible;
+                }
 
-            if (currentPage == lastPage)
-            {
-                next_page_button.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                next_page_button.Visibility = Visibility.Visible;
-            }
+                if (currentPage == lastPage)
+                {
+                    next_page_button.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    next_page_button.Visibility = Visibility.Visible;
+                }
+            });
         }
 
         public void SetSearchAsset(List<Model.Asset> assets)
@@ -86,11 +89,6 @@ namespace CLARA_Desktop.Asset
             asset_listview.ItemsSource = assets;
             previous_page_button.Visibility = Visibility.Hidden;
             next_page_button.Visibility = Visibility.Hidden;
-        }
-
-        public void SearchAssetName()
-        {
-            
         }
 
         public void MoveToPreviousPage()
