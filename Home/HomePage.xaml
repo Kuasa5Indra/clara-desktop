@@ -54,7 +54,7 @@
         </ListView>
 
         <Grid.Background>
-            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+            <ImageBrush ImageSource="/Images/[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
 
     </Grid>

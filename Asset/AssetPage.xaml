@@ -21,7 +21,7 @@
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+            <ImageBrush ImageSource="/Images/[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
         <TextBlock x:Name="asset_label" Text="Asset" Margin="0,22,0,0" FontSize="30" Foreground="#FF000050" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="107" Grid.Column="1" />
         <Button x:Name="createAssetBtn" Content="Create Asset" HorizontalAlignment="Left" Margin="806,28,0,0" VerticalAlignment="Top" Width="149" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18" Grid.Column="1"/>

@@ -74,7 +74,7 @@ namespace CLARA_Desktop.Reservation
         }
         public void UpdateGrid(MyList<Model.Reservation> listReservation, int currentPage, int lastPage)
         {
-            MyList<string> header = new MyList<string>() { "description", "begin", "end", "user", "asset", "status" };
+            MyList<string> header = new MyList<string>() { "Description", "Begin", "End", "User", "Asset", "Status" };
             MyList<string> propertyNames = new MyList<string>() { "Description", "Date_begin", "Date_end", "User.Full_name", "Asset.Name", "Status" };
             this.Dispatcher.Invoke(() =>
             {

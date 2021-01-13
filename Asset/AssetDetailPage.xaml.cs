@@ -75,11 +75,21 @@ namespace CLARA_Desktop.Asset
         {
             OpenFile openFile = new OpenFile();
             myFile = openFile.openFile(false)[0];
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(myFile.fullPath);
-            image.EndInit();
-            asset_image.Source = image;
+            if (myFile != null)
+            {
+                if (myFile.extension.Equals(".png", StringComparison.InvariantCultureIgnoreCase) ||
+                    myFile.extension.Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) ||
+                    myFile.extension.Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase) ||
+                    myFile.extension.Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    asset_image.Source = new BitmapImage(new Uri(myFile.fullPath));
+                }
+                else
+                {
+                    MessageBox.Show("File format not supported !", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                    myFile = null;
+                }
+            }
         }
 
         public void OnClickUpdateButton()
