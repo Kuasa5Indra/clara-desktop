@@ -75,7 +75,7 @@ namespace CLARA_Desktop.Reservation
 
         public void UpdateStatusGrid()
         {
-            MyList<string> header = new MyList<string>() { "datetime","status","description" };
+            MyList<string> header = new MyList<string>() { "Datetime","Status","Description" };
             MyList<string> propertyNames = new MyList<string>() { "Datetime", "Status",  "Description"};
             this.Dispatcher.Invoke(() =>
             {

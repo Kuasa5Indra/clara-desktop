@@ -11,9 +11,9 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+            <ImageBrush ImageSource="/Images/[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
-        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="222,24,0,0" VerticalAlignment="Top" Width="350" Stretch="Fill" Source="no-image.png"/>
+        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="222,24,0,0" VerticalAlignment="Top" Width="350" Stretch="Fill" Source="/Images/no-image.png"/>
         <Button x:Name="upload_button" Content="Upload" HorizontalAlignment="Left" Margin="347,375,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" RenderTransformOrigin="0.516,0.167" FontSize="18"/>
         <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="631,136,0,0" FontSize="20" Foreground="#1F1F1F" FontWeight="SemiBold"/>
         <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="743,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontWeight="SemiBold" FontSize="16" Foreground="#1F1F1F" PreviewTextInput="name_txtBox_PreviewTextInput"/>

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CLARA_Desktop"
         mc:Ignorable="d"
-        Title="CLARA Desktop" Height="720" Width="1280"
+        Title="CLARA Desktop" Height="720" Width="1280" Icon="/Images/clara_icon.ico"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"

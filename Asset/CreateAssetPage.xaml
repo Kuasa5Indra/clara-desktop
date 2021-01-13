@@ -11,11 +11,11 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="[Re] D W  Dashboard – 2.png"/>
+            <ImageBrush ImageSource="/Images/[Re] D W  Dashboard – 2.png"/>
         </Grid.Background>
         <TextBox x:Name="name_txtBox" HorizontalAlignment="Left" Height="40" Margin="770,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" FontSize="16" FontWeight="SemiBold" Foreground="#1F1F1F" PreviewTextInput="name_txtBox_PreviewTextInput"/>
         <TextBlock Text="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="658,137,0,0" FontSize="20" Foreground="#1F1F1F" FontWeight="SemiBold"/>
-        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="236,25,0,0" VerticalAlignment="Top" Width="350" Source="no-image.png" Stretch="Fill"/>
+        <Image x:Name="asset_image" HorizontalAlignment="Left" Height="350" Margin="236,25,0,0" VerticalAlignment="Top" Width="350" Source="/Images/no-image.png" Stretch="Fill"/>
         <Button x:Name="create_button" Content="Create" HorizontalAlignment="Left" Margin="955,302,0,0" VerticalAlignment="Top" Width="100" Background="#FF000050" FontWeight="SemiBold" BorderBrush="#FF000050" Height="40" FontSize="18"/>
         <Button x:Name="cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="818,302,0,0" VerticalAlignment="Top" Width="100" Background="#707070" FontWeight="SemiBold" BorderBrush="#FF707070" Height="40" FontSize="18"/>
         <TextBlock Text="Quantity" HorizontalAlignment="Left" Margin="658,202,0,0" VerticalAlignment="Top" FontWeight="SemiBold" FontSize="20" Foreground="#1F1F1F" />
