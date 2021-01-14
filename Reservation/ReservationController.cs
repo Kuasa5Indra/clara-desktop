@@ -78,22 +78,8 @@ namespace CLARA_Desktop.Reservation
             getView().callMethod("UpdateGrid", reservationList, currentPage, lastPage);
         }
 
-        public async void UpdateStatusReservation(string id, string status)
+        public async void UpdateStatusReservation(string id, string status, string description)
         {
-            string description;
-            if (status.Equals("On Reservation"))
-            {
-                description = "You can reserve this";
-            }
-            else if (status.Equals("Returned"))
-            {
-                description = "Asset has been returned";
-            }
-            else
-            {
-                description = "Sorry, reservation denied";
-            }
-            Console.WriteLine(id);
             var client = new ApiClient(API.URL);
             var requestBuilder = new ApiRequestBuilder();
             var request = requestBuilder
