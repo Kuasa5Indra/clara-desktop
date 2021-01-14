@@ -25,6 +25,6 @@ namespace CLARA_Desktop.Model
         [JsonProperty("asset")]
         public Asset Asset { get; set; }
         [JsonProperty("history")]
-        public MyList<History> Histories { get; set; }
+        public List<History> Histories { get; set; }
     }
 }

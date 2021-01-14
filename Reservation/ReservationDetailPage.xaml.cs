@@ -80,8 +80,8 @@ namespace CLARA_Desktop.Reservation
 
         public void UpdateStatusGrid()
         {
-            MyList<string> header = new MyList<string>() { "Datetime","Status","Description" };
-            MyList<string> propertyNames = new MyList<string>() { "Datetime", "Status",  "Description"};
+            /*MyList<string> header = new MyList<string>() { "Datetime","Status","Description" };
+            MyList<string> propertyNames = new MyList<string>() { "Datetime", "Status",  "Description"};*/
             this.Dispatcher.Invoke(() =>
             {
                 beginTextBlock.setText(reservation.Date_begin);
@@ -90,7 +90,8 @@ namespace CLARA_Desktop.Reservation
                 classroomTextBlock.setText(reservation.User.Grade);
                 nrpTextBlock.setText(reservation.User.Nrp.ToString());
                 assetNameTextBlock.setText(reservation.Asset.Name);
-                statusDataGrid.setColumnDataBinding<Model.History>(header, propertyNames, (reservation.Histories));
+                statusGrid.ItemsSource = reservation.Histories;
+                /*statusDataGrid.setColumnDataBinding<Model.History>(header, propertyNames, (reservation.Histories));*/
                 assetImage.Source = new BitmapImage(new Uri(String.Concat(API.image_path, reservation.Asset.Image)));
                 if (reservation.Status == "On Reservation")
                 {

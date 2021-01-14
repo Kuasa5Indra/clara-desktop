@@ -23,16 +23,22 @@
                 VerticalAlignment="Top" Height="50" TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" FontSize="16"
                 materialDesign:HintAssist.Hint="Put the description here..." Margin="470,288,464,0"/>
-        <TextBlock Name="assetName" Text="Asset name" HorizontalAlignment="Left" Margin="470,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="110" FontWeight="Bold" FontSize="20"/>
+        <TextBlock Name="assetName" Text="Asset name" HorizontalAlignment="Left" Margin="470,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="360" FontWeight="Bold" FontSize="20"/>
         <TextBlock Name="reservee" Text="Reservee" HorizontalAlignment="Left" Height="26" Margin="818,106,0,0" VerticalAlignment="Top" Width="350" Foreground="#FF707070" FontSize="16" FontWeight="SemiBold"/>
         <TextBlock Name="classroom" Text="Class" HorizontalAlignment="Left" Height="26" Margin="818,134,0,0" VerticalAlignment="Top" Width="130" RenderTransformOrigin="-3.364,-0.333" Foreground="#FF707070" FontSize="16"/>
         <TextBlock x:Name="nrp" HorizontalAlignment="Left" Margin="818,158,0,0" VerticalAlignment="Top" Text="NRP" Foreground="#FF707070" FontSize="16" Height="26" Width="130"/>
-        <TextBlock Name="begin"  Text="Begin Date" HorizontalAlignment="Left" Margin="818,192,0,0" VerticalAlignment="Top" Height="26" Width="130" Foreground="#FF707070" FontSize="16"/>
-        <TextBlock Name="end" Text="Return Date" HorizontalAlignment="Left" Margin="818,216,0,0" VerticalAlignment="Top" Foreground="#FF707070" FontSize="16" Height="26" Width="130"/>
+        <TextBlock Name="begin"  Text="Begin Date" HorizontalAlignment="Left" Margin="818,192,0,0" VerticalAlignment="Top" Height="26" Width="140" Foreground="#FF707070" FontSize="16"/>
+        <TextBlock Name="end" Text="Return Date" HorizontalAlignment="Left" Margin="818,216,0,0" VerticalAlignment="Top" Foreground="#FF707070" FontSize="16" Height="26" Width="140"/>
         <TextBlock x:Name="statusUpdate" Text="Status Update" HorizontalAlignment="Left" Margin="470,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="170" FontWeight="Bold" FontSize="20"/>
         <DataGrid Name="statusGrid" Margin="470,380,187,0" IsReadOnly="True" 
                   VerticalAlignment="Top" Height="128"
-                  VerticalScrollBarVisibility="Auto"/>
+                  VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Datetime" Binding="{Binding Datetime}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="accept_button" Content="Accept" HorizontalAlignment="Left" Margin="971,515,0,0" VerticalAlignment="Top" Width="120" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18"/>
         <Button x:Name="deny_button" Content="Reject" HorizontalAlignment="Left" Margin="846,515,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF707070" Background="#FF707070" Height="40" FontSize="18"/>
         <TextBlock x:Name="reservee_textBlock" Text="Reservee" HorizontalAlignment="Left" Margin="470,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="120" FontSize="16" Foreground="#707070"/>

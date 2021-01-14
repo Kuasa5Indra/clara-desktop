@@ -16,7 +16,7 @@ namespace CLARA_Desktop.Reservation
 {
     class ReservationController : MyController
     {
-        public MyList<Model.Reservation> reservationList;
+        public List<Model.Reservation> reservationList;
         public ReservationController(IMyView _myView) : base(_myView)
         {
 
@@ -68,7 +68,7 @@ namespace CLARA_Desktop.Reservation
                 string json = _response.getJObject()["data"].ToString();
                 int currentPage = Int32.Parse(_response.getJObject()["current_page"].ToString());
                 int lastPage = Int32.Parse(_response.getJObject()["last_page"].ToString());
-                reservationList = JsonConvert.DeserializeObject<MyList<Model.Reservation>>(json);
+                reservationList = JsonConvert.DeserializeObject<List<Model.Reservation>>(json);
                 SetContentView(currentPage, lastPage);
             }
         }

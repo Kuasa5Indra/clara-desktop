@@ -72,13 +72,14 @@ namespace CLARA_Desktop.Reservation
             string name = searchTextBox.getText();
             getController().callMethod("SearchReservation", name);
         }
-        public void UpdateGrid(MyList<Model.Reservation> listReservation, int currentPage, int lastPage)
+        public void UpdateGrid(List<Model.Reservation> listReservation, int currentPage, int lastPage)
         {
-            MyList<string> header = new MyList<string>() { "Description", "Begin", "End", "User", "Asset", "Status" };
-            MyList<string> propertyNames = new MyList<string>() { "Description", "Date_begin", "Date_end", "User.Full_name", "Asset.Name", "Status" };
+            /*MyList<string> header = new MyList<string>() { "Description", "Begin", "End", "User", "Asset", "Status" };
+            MyList<string> propertyNames = new MyList<string>() { "Description", "Date_begin", "Date_end", "User.Full_name", "Asset.Name", "Status" };*/
             this.Dispatcher.Invoke(() =>
             {
-                reservationDataGrid.setColumnDataBinding<Model.Reservation>(header, propertyNames, listReservation);
+                reservationsGrid.ItemsSource = listReservation;
+                /*reservationDataGrid.setColumnDataBinding<Model.Reservation>(header, propertyNames, listReservation);*/
                 if (currentPage == 1)
                 {
                     previous_page_button.Visibility = Visibility.Hidden;
