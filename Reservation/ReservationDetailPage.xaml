@@ -19,7 +19,7 @@
         <TextBlock x:Name="heading2" HorizontalAlignment="Left" Margin="161,21,0,0" TextWrapping="Wrap" Text="Reservation Detail" VerticalAlignment="Top" Foreground="#FF000050" Width="377" FontSize="30"/>
         <Image Name="imageAsset" HorizontalAlignment="Left" Height="225" Margin="161,76,0,0" VerticalAlignment="Top" Width="245" Source="/Images/no-image.png" Stretch="Fill"/>
         <TextBlock x:Name="description_textBlock" Text="Description" HorizontalAlignment="Left" Margin="470,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="110" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="description"
+        <TextBox x:Name="description_txtBox"
                 VerticalAlignment="Top" Height="50" TextWrapping="Wrap"
                 VerticalScrollBarVisibility="Auto" FontSize="16"
                 materialDesign:HintAssist.Hint="Put the description here..." Margin="470,288,464,0"/>
@@ -33,7 +33,7 @@
         <DataGrid Name="statusGrid" Margin="470,380,187,0" IsReadOnly="True" 
                   VerticalAlignment="Top" Height="128"
                   VerticalScrollBarVisibility="Auto"/>
-        <Button x:Name="accept_button" Content="Finish" HorizontalAlignment="Left" Margin="971,515,0,0" VerticalAlignment="Top" Width="120" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18"/>
+        <Button x:Name="accept_button" Content="Accept" HorizontalAlignment="Left" Margin="971,515,0,0" VerticalAlignment="Top" Width="120" Background="#FF000050" BorderBrush="#FF000050" Height="40" FontSize="18"/>
         <Button x:Name="deny_button" Content="Reject" HorizontalAlignment="Left" Margin="846,515,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF707070" Background="#FF707070" Height="40" FontSize="18"/>
         <TextBlock x:Name="reservee_textBlock" Text="Reservee" HorizontalAlignment="Left" Margin="470,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="120" FontSize="16" Foreground="#707070"/>
         <TextBlock x:Name="class_textBlock" Text="Class" HorizontalAlignment="Left" Margin="470,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="120" FontSize="16" Foreground="#707070"/>

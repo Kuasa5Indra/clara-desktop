@@ -18,6 +18,7 @@ using Velacro.UIElements.Button;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.DataGrid;
 using Velacro.UIElements.TextBlock;
+using Velacro.UIElements.TextBox;
 using CLARA_Desktop.Routes;
 
 namespace CLARA_Desktop.Reservation
@@ -41,6 +42,8 @@ namespace CLARA_Desktop.Reservation
         private BuilderButton builderButton;
         private IMyButton acceptButton;
         private IMyButton denyButton;
+        private BuilderTextBox builderTextBox;
+        private IMyTextBox descriptionTextBox;
 
         public ReservationDetailPage(Model.Reservation reservation)
         {
@@ -58,6 +61,7 @@ namespace CLARA_Desktop.Reservation
             builderDataGrid = new BuilderDataGrid();
             builderTextBlock = new BuilderTextBlock();
             builderButton = new BuilderButton();
+            builderTextBox = new BuilderTextBox();
         }
         private void InitUIElements()
         {
@@ -71,6 +75,7 @@ namespace CLARA_Desktop.Reservation
             assetImage = (Image) this.FindName("imageAsset");
             acceptButton = builderButton.activate(this, "accept_button").addOnClick(this, "OnClickAcceptButton");
             denyButton = builderButton.activate(this, "deny_button").addOnClick(this, "OnClickDenyButton");
+            descriptionTextBox = builderTextBox.activate(this, "description_txtBox");
         }
 
         public void UpdateStatusGrid()
@@ -102,19 +107,48 @@ namespace CLARA_Desktop.Reservation
 
         public void OnClickAcceptButton()
         {
-            if (accept_button.Content.Equals("Accept"))
+            string description = descriptionTextBox.getText();
+            if (description == "")
             {
-                getController().callMethod("UpdateStatusReservation", reservation.Id, "On Reservation");
+                MessageBox.Show("Description is required", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                getController().callMethod("UpdateStatusReservation", reservation.Id, "Returned");
+                string condition = accept_button.Content.ToString().ToLower();
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to " + condition + " reservation ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        if (accept_button.Content.Equals("Accept"))
+                        {
+                            getController().callMethod("UpdateStatusReservation", reservation.Id, "On Reservation", description);
+                        }
+                        else
+                        {
+                            getController().callMethod("UpdateStatusReservation", reservation.Id, "Returned", description);
+                        }
+                        break;
+                }
             }
         }
 
         public void OnClickDenyButton()
         {
-            getController().callMethod("UpdateStatusReservation", reservation.Id, "Denied");
+            string description = descriptionTextBox.getText();
+            if (description == "")
+            {
+                MessageBox.Show("Description is required", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to deny reservation ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        getController().callMethod("UpdateStatusReservation", reservation.Id, "Denied", description);
+                        break;
+                }
+            }
         }
 
         public void GetUpdatedReservation(Model.Reservation reservation)
