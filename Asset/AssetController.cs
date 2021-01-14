@@ -82,7 +82,7 @@ namespace CLARA_Desktop.Asset
                 .setEndpoint(API.asset)
                 .setRequestMethod(HttpMethod.Post);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            MessageBox.Show(response.getJObject()["message"].ToString(), "Success");
+            MessageBox.Show(response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public async void UpdateAsset(Model.Asset newAsset, MyFile myFile)

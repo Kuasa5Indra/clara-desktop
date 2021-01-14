@@ -9,9 +9,9 @@ namespace CLARA_Desktop.Routes
     class API
     {
         // For Production use CLARA Rest API
-        // public static String URL = "https://api.clara-app.tech/";
+        public static String URL = "https://api.clara-app.tech/";
         // For Development use localhost
-        public static String URL = "http://localhost:8000/";
+        // public static String URL = "http://localhost:8000/";
 
         // Here's the image path of server
         public static String image_path = String.Concat(URL, "image/");

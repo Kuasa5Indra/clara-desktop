@@ -93,7 +93,7 @@ namespace CLARA_Desktop.Reservation
             var response = await client.sendRequest(request.getApiRequestBundle());
             string json = response.getJObject()["reservation"].ToString();
             Model.Reservation updatedReservation = JsonConvert.DeserializeObject<Model.Reservation>(json);
-            MessageBox.Show(response.getJObject()["message"].ToString());
+            MessageBox.Show(response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             getView().callMethod("GetUpdatedReservation", updatedReservation);
         }
     }
