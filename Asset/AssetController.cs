@@ -57,6 +57,22 @@ namespace CLARA_Desktop.Asset
             }
         }
 
+        public void CallbackOperationFailed(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                MessageBox.Show("An Asset has alerady exists", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        public void CallbackOperationSuccess(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                MessageBox.Show(_response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
         private List<Model.Asset> SetImagePath(List<Model.Asset> assets)
         {
             for(int i = 0; i < assets.Count; i++)
@@ -81,8 +97,9 @@ namespace CLARA_Desktop.Asset
                 .buildMultipartRequest(new MultiPartContent(formContent))
                 .setEndpoint(API.asset)
                 .setRequestMethod(HttpMethod.Post);
+            client.setOnFailedRequest(CallbackOperationFailed);
+            client.setOnSuccessRequest(CallbackOperationSuccess);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            MessageBox.Show(response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public async void UpdateAsset(Model.Asset newAsset, MyFile myFile)
@@ -100,8 +117,9 @@ namespace CLARA_Desktop.Asset
                 .buildMultipartRequest(new MultiPartContent(formContent))
                 .setEndpoint(API.assetId.Replace("{id}", newAsset.Id))
                 .setRequestMethod(HttpMethod.Post);
+            client.setOnFailedRequest(CallbackOperationFailed);
+            client.setOnSuccessRequest(CallbackOperationSuccess);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            MessageBox.Show(response.getJObject()["message"].ToString(), "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public async void DeleteAsset(string id)

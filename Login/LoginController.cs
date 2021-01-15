@@ -38,7 +38,7 @@ namespace CLARA_Desktop.Login
 
         public void FailedLogin(HttpResponseBundle _response)
         {
-            MessageBox.Show("Invalid email or password", "Access Denied");
+            MessageBox.Show("Invalid email or password", "Access Denied", MessageBoxButton.OK, MessageBoxImage.Hand);
         }
 
         public void SuccessLogin(HttpResponseBundle _response)
@@ -47,7 +47,7 @@ namespace CLARA_Desktop.Login
             {
                 if (_response.getJObject()["role"].ToString() != "Lecturer")
                 {
-                    MessageBox.Show("This application is only for Lecturer Access", "Access Denied");
+                    MessageBox.Show("Sorry, This application is only for Lecturer Access", "Access Denied", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
                 else
                 {
