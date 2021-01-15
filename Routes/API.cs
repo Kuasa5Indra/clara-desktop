@@ -34,7 +34,7 @@ namespace CLARA_Desktop.Routes
         public static String asset = "asset";
         public static String assetId = "asset/{id}";
         public static String assetName = "asset/search?name={name}";
-        public static String assetPage = "assets?page={number}";
+        public static String assetPage = "assets?pagination=true&page={number}";
 
     }
 }
